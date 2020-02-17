@@ -1,0 +1,23 @@
+{
+  "name": "congressionaldatabasewebsite",
+  "version": "1.0.0",
+  "description": "packages for managing and hosting a conngressional database website",
+  "main": "init.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aidan1221/congressionalDatabaseWebsite.git"
+  },
+  "author": "Aidan Wolfe, Chris Partridge",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aidan1221/congressionalDatabaseWebsite/issues"
+  },
+  "homepage": "https://github.com/aidan1221/congressionalDatabaseWebsite#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "react": "^16.12.0"
+  }
+}
