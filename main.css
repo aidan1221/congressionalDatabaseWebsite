@@ -1,0 +1,28 @@
+.navbar-nav li{
+  margin-left: 10px;
+}
+
+.navbar-nav a {
+  border-left: 1px solid lightgrey;
+  border-right: 1px solid lightgrey;
+}
+
+.navbar .navbar-nav>li.active {
+  background: lightgrey;
+}
+
+.navbar .navbar-nav>li>a:hover {
+  background: lightgrey;
+}
+
+.container {
+  position: relative;
+  text-align: center;
+  float: none;
+  margin: 0 auto;
+  margin-top: 100px;
+}
+
+#image1 {
+  top: 200px;
+}

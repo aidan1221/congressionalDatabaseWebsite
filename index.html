@@ -3,22 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="main.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <title>Home</title>
 </head>
 <body>
     <div class="header">
         <h1>Congressional Database Query Website!</h1>
     </div>
-    <div class="navbar">
-        <a href="#">Home</a>
-        <a href="about.html">About</a>
-        <a href="query.html">Query</a>
-        <a href="contact.html">Contact</a>
-        <a href="datascience.html">Data Science</a>
-        <a href="#">Login</a>
+    <nav class="navbar fixed-top navbar-expand-sm navbar-light bg-light">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="query.html">Query</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="datascience.html">Data Science</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Login</a>
+            </li>
+        </ul>
+        <span class="navbar-text">Congressional Database Query Site!</span>
+    </nav>
+    <div class="container" id="hometext">
+        <h3>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore quibusdam impedit quas fuga repudiandae placeat qui eos, velit obcaecati illum architecto reprehenderit ducimus! Ipsam at, accusamus assumenda hic tempora inventore.</h3>
     </div>
-    <div id="photo">
-        <img src="https://placekitten.com/600/300" alt="Placeholder">
+    <div class="container" id="image1">
+        <img class="img-fluid" src="https://placekitten.com/800/400" alt="Placeholder">
     </div>
 </body>
 </html>
