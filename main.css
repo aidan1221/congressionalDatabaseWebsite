@@ -1,5 +1,5 @@
 #main {
-  background-image: url("uscapitol.jpg");
+  background-image: url("uscapitol2.jpg");
   background-size: cover;
   padding-top: 20%;
   padding-bottom: 20%;
@@ -17,6 +17,10 @@
   position: absolute;
 }
 
+#maintext h1{
+  margin-bottom: 30px;
+}
+
 .container {
   position: relative;
   text-align: center;
@@ -24,4 +28,6 @@
   margin: 0 auto;
   margin-top: 100px;
 }
+
+
 
