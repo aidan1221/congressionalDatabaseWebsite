@@ -1,0 +1,28 @@
+.navbar-nav li{
+    margin-left: 10px;
+  }
+  
+  .navbar-nav a {
+    border-left: 1px solid lightgrey;
+    border-right: 1px solid lightgrey;
+  }
+  
+  .navbar .navbar-nav>li.active {
+    background: rgb(173, 221, 230);
+  }
+  
+  .navbar .navbar-nav>li>a:hover {
+    background: lightgrey;
+  }
+
+  .nav-link {
+      color: rgba(0, 174, 255, 0.836) !important;
+  }
+
+  .nav-item.active .nav-link {
+      color: blue !important;
+  }
+
+  .navbar-text {
+      color: blue !important;
+  }

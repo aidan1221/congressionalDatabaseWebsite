@@ -1,18 +1,20 @@
-.navbar-nav li{
-  margin-left: 10px;
+#main {
+  background-image: url("uscapitol.jpg");
+  background-size: cover;
+  padding-top: 20%;
+  padding-bottom: 20%;
+  background-position-y: 20%;
+  position: relative;
 }
 
-.navbar-nav a {
-  border-left: 1px solid lightgrey;
-  border-right: 1px solid lightgrey;
-}
-
-.navbar .navbar-nav>li.active {
-  background: lightgrey;
-}
-
-.navbar .navbar-nav>li>a:hover {
-  background: lightgrey;
+#maintext{
+  width: auto;
+  text-align: left;
+  padding: 0%;
+  color: darkblue;
+  top: 90px;
+  left: 120px;
+  position: absolute;
 }
 
 .container {
@@ -23,6 +25,3 @@
   margin-top: 100px;
 }
 
-#image1 {
-  top: 200px;
-}
