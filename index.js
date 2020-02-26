@@ -21,6 +21,8 @@ app.get('/', (request, response) => {
 
 app.get('/connect', db.connect);
 
+app.get('/blumenauer', db.queryBlumenauer);
+
 app.listen(port, () => {
     console.log(`App running on port ${port}`)
 });

@@ -3,7 +3,7 @@ const pool = new Pool({
     user: 'postgres',
     host: '34.83.246.107',
     database: 'congresql',
-    password: process.env.CDBPassword,
+    password: 'mango okapi legend flank',
     port: 5432,
 })
 
@@ -24,6 +24,20 @@ const connect = (request, response) => {
 }
 
 
+const queryBlumenauer = (request, response) => {
+
+    const name = 'Earl Blumenauer';
+
+    pool.query('SELECT * FROM representative_116 WHERE rep_name = $1', [name], (error, results) => {
+    if (error) {
+        console.log(error)
+    }
+    response.status(200).json(results.rows);
+
+    })
+}
+
 module.exports = {
     connect,
+    queryBlumenauer,
 }
