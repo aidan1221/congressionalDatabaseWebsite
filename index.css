@@ -5,10 +5,6 @@ body {
   #main {
     background-image: url("uscapitol2.jpg");
     background-size: cover;
-    padding-top: 20%;
-    padding-bottom: 20%;
-    background-position-y: 20%;
-    position: relative;
   }
   
   #maintext{
@@ -24,6 +20,88 @@ body {
   #maintext h1{
     margin-bottom: 30px;
   }
+
+  @media (max-width: 420px) {
+      #main {
+          padding-top: 50%;
+          padding-bottom: 50%;
+          background-position-x: 50%;
+          position: relative;
+      }
+
+      #maintext {
+          padding-right: 30%;
+          color: rgba(0, 0, 90, 0.938);
+          top: 30px;
+          left: 40px;
+          position: relative;
+      }
+
+      #maintext h1{
+        font-size: 6vw;
+      }
+
+      #maintext h2{
+        font-size: 4vw;
+        padding-right: 40%;
+        margin: 0;
+      }
+  }
+
+  @media (min-width: 421px) and (max-width: 768px) {
+    #main {
+        padding-top: 200px;
+        padding-bottom: 50%;
+        background-position-x: 20%;
+        background-position-y: 35%;
+        background-position-x: 50%;
+        position: relative;
+    }
+
+    #maintext {
+        width: 80%;
+        padding: 0;
+        color: rgba(0, 0, 90, 0.938);
+        top: 90px;
+        left: 10px;
+        position: relative;
+    }
+
+    #maintext h1{
+      font-size: 4vw;
+    }
+
+    #maintext h2{
+      font-size: 2vw;
+      margin: 0;
+    }
+}
+
+@media (min-width: 769px) {
+    #main {
+        padding-top: 20%;
+        padding-bottom: 20%;
+        background-position-y: 35%;
+        position: relative;
+    }
+
+    #maintext {
+        width: 80%;
+        color: rgba(0, 0, 90, 0.938);
+        top: 90px;
+        left: 120px;
+        position: absolute;
+    }
+
+    #maintext h1{
+      font-size: 4vw;
+    }
+
+    #maintext h2{
+      font-size: 2vw;
+      margin: 0;
+    }
+}
   
   .container {
     position: relative;
