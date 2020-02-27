@@ -2,6 +2,10 @@
     margin-left: 10px;
   }
   
+  .navbar {
+    background: linear-gradient(rgb(82, 65, 238), rgb(173, 221, 230));
+  }
+
   .navbar-nav a {
     border-left: 1px solid lightgrey;
     border-right: 1px solid lightgrey;
@@ -12,17 +16,21 @@
   }
   
   .navbar .navbar-nav>li>a:hover {
-    background: lightgrey;
+    background: rgb(173, 221, 230);
   }
 
   .nav-link {
-      color: rgba(0, 174, 255, 0.836) !important;
+      color: rgba(36, 0, 167, 0.459) !important;
   }
 
   .nav-item.active .nav-link {
-      color: blue !important;
+      color: rgb(72, 21, 255) !important;
   }
 
   .navbar-text {
-      color: blue !important;
+      color: rgb(72, 21, 255) !important;
   }
+
+body {
+  font-family: 'Audiowide', sans-serif !important;
+}
