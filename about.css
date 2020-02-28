@@ -1,3 +1,41 @@
+#aboutimage{
+  padding-top: 10px;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+@media (max-width: 420px) {
+  #aboutimage{
+    padding-top: 50%;
+  }
+  
+  #aboutinfo h3{
+    font-size: 5vw;
+  }
+
+  .card-title {
+    font-size: 6vw;
+  }
+
+  .card-text {
+    font-size: 5vw;
+  }
+}
+
+@media (min-width: 421px) and (max-width: 768px) {
+  #aboutimage{
+    padding-top: 20%;
+  }
+
+  #bios{
+    width: 75%;
+  }
+}
+
+@media (min-width: 769px) {
+
+}
+
 .container {
   position: relative;
   text-align: center;
