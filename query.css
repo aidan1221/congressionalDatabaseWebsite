@@ -1,0 +1,49 @@
+.container {
+  position: relative;
+  float: none;
+  margin: 0 auto;
+  margin-top: 100px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+#tree li {
+  margin: 20px 20px 20px 20px;
+}
+
+#item {
+  border: 1px solid black;
+  padding: 4px 4px 4px 4px;
+}
+
+#root {
+  float: left;
+  margin-right: 150px;
+  text-align: center;
+}
+
+.node {
+  cursor: pointer;
+  user-select: none; 
+}
+
+.node::before {
+  color: black;
+  display: inline-block;
+  margin-right: 6px;
+}
+
+.node { 
+  display: show;
+}
+
+.hidden {
+  display: none;
+}
+
+#reset {
+  position: relative;
+  top: 300px;
+}
