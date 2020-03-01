@@ -15,7 +15,7 @@
       border-bottom: 3px solid #6441a5;
   }
 
-  .navbar-text {
+  .navbar-text a{
       color: #6441a5 !important;
   }
 

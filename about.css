@@ -8,6 +8,16 @@
   color: rgb(255, 255, 255) !important;
 }
 
+.card-footer a{
+  position: absolute;
+  bottom: 0;
+  color: white;
+}
+
+.card-footer a:hover{
+  color: #6441a5;
+}
+
 @media (max-width: 420px) {
   #aboutimage{
     padding-top: 50%;

@@ -7,7 +7,8 @@
   }
   
   form {
-    border: 2px solid lightgrey;
+    border: 2px solid #6441a5;
+    background-color: rgb(97, 97, 97);
   }
   
   input[type=text], input[type=password] {
@@ -21,7 +22,7 @@
   }
   
   button {
-    background-color: lightblue;
+    background-color: #6441a5;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
