@@ -9,20 +9,15 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Audiowide&display=swap" rel="stylesheet"> 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <title>Query</title>
     <script>
         $(document).ready(function () {
             $('.node').click(function() {
                 $(this).next('.hidden').slideToggle();
                 $(this).parent().siblings().find('ul').slideUp();
-                $(this).parent().siblings().hide();
-            });
-            $('#reset').click(function () {
-                $('.node').parent().siblings().find('ul').slideUp();
-                $('.node').parent().siblings().show();
             });
         });
     </script>
-    <title>Query</title>
 </head>
 <body>
     <header>
@@ -54,14 +49,14 @@
                     <ul class="hidden">
                         <li id="root"><span class="node"><a id="item">Congress Person</a></span>
                             <ul class="hidden">
-                                <li><a id="item">Congress Person</a></li>
-                                <li><a id="item">Congress Person</a></li>
+                                <li><a id="queryitem">Query</a></li>
+                                <li><a id="queryitem">Query</a></li>
                             </ul>
                         </li>
                         <li id="root"><span class="node"><a id="item">Congress Person</a></span>
                             <ul class="hidden">
-                                <li><a id="item">Congress Person</a></li>
-                                <li><a id="item">Congress Person</a></li>
+                                <li><a id="queryitem">Query</a></li>
+                                <li><a id="queryitem">Query</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -70,14 +65,14 @@
                     <ul class="hidden">
                         <li id="root"><span class="node"><a id="item">House</a></span>
                             <ul class="hidden">
-                                <li><a id="item">House</a></li>
-                                <li><a id="item">House</a></li>
+                                <li><a id="queryitem">Query</a></li>
+                                <li><a id="queryitem">Query</a></li>
                             </ul>
                         </li>
                         <li id="root"><span class="node"><a id="item">Senate</a></span>
                             <ul class="hidden">
-                                <li><a id="item">Senate</a></li>
-                                <li><a id="item">Senate</a></li>
+                                <li><a id="queryitem">Query</a></li>
+                                <li><a id="queryitem">Query</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -86,22 +81,22 @@
                     <ul class="hidden">
                         <li id="root"><span class="node"><a id="item">State</a></span>
                             <ul class="hidden">
-                                <li><a id="item">State</a></li>
-                                <li><a id="item">State</a></li>
+                                <li><a id="queryitem">Query</a></li>
+                                <li><a id="queryitem">Query</a></li>
                             </ul>
                         </li>
                         <li id="root"><span class="node"><a id="item">State</a></span>
                             <ul class="hidden">
                                 <li><span class="node"><a id="item">State</a></span>
                                     <ul class="hidden">
-                                        <li><a id="item">State</a></li>
-                                        <li><a id="item">State</a></li>
+                                        <li><a id="queryitem">Query</a></li>
+                                        <li><a id="queryitem">Query</a></li>
                                     </ul>
                                 </li>
                                 <li><span class="node"><a id="item">State</a></span>
                                     <ul class="hidden">
-                                        <li><a id="item">State</a></li>
-                                        <li><a id="item">State</a></li>
+                                        <li><a id="queryitem">Query</a></li>
+                                        <li><a id="queryitem">Query</a></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -110,7 +105,6 @@
                 </li>
             </ul> 
         </div>
-        <button id="reset">Reset</button>
     </main>
 </body>
 </html>

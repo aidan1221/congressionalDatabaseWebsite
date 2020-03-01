@@ -2,7 +2,7 @@
   position: relative;
   float: none;
   margin: 0 auto;
-  margin-top: 100px;
+  margin-top: 250px;
 }
 
 ul {
@@ -10,18 +10,26 @@ ul {
 }
 
 #tree li {
-  margin: 20px 20px 20px 20px;
+  margin: 100px auto;
+  position: relative;
+  left: 100px;
 }
 
 #item {
   border: 1px solid black;
-  padding: 4px 4px 4px 4px;
+  background-color: lightblue;
+  border-radius: 10px;
+  padding: 8px 8px 8px 8px;
+}
+
+#queryitem {
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 8px 8px 8px 8px;
 }
 
 #root {
-  float: left;
   margin-right: 150px;
-  text-align: center;
 }
 
 .node {
@@ -41,9 +49,4 @@ ul {
 
 .hidden {
   display: none;
-}
-
-#reset {
-  position: relative;
-  top: 300px;
 }
