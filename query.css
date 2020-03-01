@@ -53,11 +53,49 @@ ul {
   display: none;
 }
 
+#querylist {
+  scrollbar-color: red blue;
+  border: 2px solid rgb(27, 2, 68);
+  background: linear-gradient(rgb(6, 25, 134), rgb(19, 226, 140)) !important;
+  height: 600px;
+  width: 600px;
+  overflow-y: hidden;
+  overflow-y: scroll;
+}
+
+#querylist a {
+  font-size: 2rem;
+  color: rgb(255, 255, 255) !important;
+}
+
+@media (min-width: 421px) and (max-width: 768px) {
+  #querylist {
+    height: 600px;
+    width: 300px;
+    overflow-y: hidden;
+    overflow-y: scroll;
+  }
+
+  #querylist a {
+    font-size: 3vw;
+  }
+}
 
 @media (max-width: 420px) {
   #tree li {
     margin: 100px auto;
     left: 5px;
     font-size: 2.5vw;
+  }
+
+  #querylist {
+    height: 600px;
+    width: 200px;
+    overflow-y: hidden;
+    overflow-y: scroll;
+  }
+
+  #querylist a {
+    font-size: 3vw;
   }
 }

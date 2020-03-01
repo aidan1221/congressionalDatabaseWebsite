@@ -8,7 +8,16 @@
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Audiowide&display=swap" rel="stylesheet"> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <title>Query</title>
+    <script>
+        $(document).ready(function () {
+            $('.node').click(function() {
+                $(this).next('.hidden').slideToggle();
+                $(this).parent().siblings().find('ul').slideUp();
+            });
+        });
+    </script>
 </head>
 <body>
     <header>
@@ -34,9 +43,23 @@
         </nav>
     </header>
     <main>
-        <div class="container" id="queryoptions">
-            <a href="querytree.html" id="querylink">Query Tree<img src="https://placekitten.com/300/500" alt="placeholder"></a>
-            <a href="querylist.html" id="querylink">Query List<img src="https://placekitten.com/300/500" alt="placeholder"></a>
+        <div class="container" id="querylist">
+            <ul>
+                <li><a href="#">Query</a></li>
+                <li><a href="#">Query</a></li>
+                <li><a href="#">Query</a></li>
+                <li><a href="#">Query</a></li>
+                <li><a href="#">Query</a></li>
+                <li><a href="#">Query</a></li>
+                <li><a href="#">Query</a></li>
+                <li><a href="#">Query</a></li>
+                <li><a href="#">Query</a></li>
+                <li><a href="#">Query</a></li>
+                <li><a href="#">Query</a></li>
+                <li><a href="#">Query</a></li>
+                <li><a href="#">Query</a></li>
+                <li><a href="#">Query</a></li>
+            </ul>
         </div>
     </main>
 </body>
