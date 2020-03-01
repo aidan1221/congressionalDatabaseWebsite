@@ -54,18 +54,20 @@ ul {
 }
 
 #querylist {
-  scrollbar-color: red blue;
-  border: 2px solid rgb(27, 2, 68);
-  background: linear-gradient(rgb(6, 25, 134), rgb(19, 226, 140)) !important;
   height: 600px;
-  width: 600px;
-  overflow-y: hidden;
+  width: 1000px;
   overflow-y: scroll;
+  position: relative;
+  left: 5%;
 }
 
 #querylist a {
   font-size: 2rem;
-  color: rgb(255, 255, 255) !important;
+  color: white;
+}
+
+li>a:hover {
+  color: #6441a5 !important;
 }
 
 @media (min-width: 421px) and (max-width: 768px) {

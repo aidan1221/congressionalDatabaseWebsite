@@ -1,22 +1,9 @@
 .navbar-nav li{
     margin-left: 10px;
   }
-  
-  .navbar {
-    background: linear-gradient(rgb(26, 1, 248), rgba(75, 147, 230, 0.993), rgb(47, 205, 233));
-  }
 
-  .navbar-nav a {
-    border-left: 1px solid rgb(255, 255, 255);
-    border-right: 1px solid rgb(255, 255, 255);
-  }
-  
-  .navbar .navbar-nav>li.active {
-    background: rgb(235, 40, 10);
-  }
-  
   .navbar .navbar-nav>li>a:hover {
-    background: rgb(5, 55, 163);
+    color: #6441a5 !important;
   }
 
   .nav-link {
@@ -24,14 +11,15 @@
   }
 
   .nav-item.active .nav-link {
-      color: rgb(0, 28, 155) !important;
+      color: #6441a5 !important;
+      border-bottom: 3px solid #6441a5;
   }
 
   .navbar-text {
-      color: rgb(255, 255, 255) !important;
+      color: #6441a5 !important;
   }
 
 body {
   font-family: 'Audiowide', sans-serif !important;
-  background-color: rgba(174, 243, 240, 0.425) !important;
+  background-color: rgba(0, 0, 0, 0.945) !important;
 }

@@ -4,6 +4,10 @@
   position: relative;
 }
 
+#aboutinfo {
+  color: rgb(255, 255, 255) !important;
+}
+
 @media (max-width: 420px) {
   #aboutimage{
     padding-top: 50%;
@@ -19,6 +23,7 @@
 
   .card-text {
     font-size: 5vw;
+    text-align: center;
   }
 }
 
