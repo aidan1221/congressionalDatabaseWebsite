@@ -3,34 +3,35 @@
   }
   
   .navbar {
-    background: linear-gradient(rgb(82, 65, 238), rgb(173, 221, 230));
+    background: linear-gradient(rgb(26, 1, 248), rgba(75, 147, 230, 0.993), rgb(47, 205, 233));
   }
 
   .navbar-nav a {
-    border-left: 1px solid lightgrey;
-    border-right: 1px solid lightgrey;
+    border-left: 1px solid rgb(255, 255, 255);
+    border-right: 1px solid rgb(255, 255, 255);
   }
   
   .navbar .navbar-nav>li.active {
-    background: rgb(173, 221, 230);
+    background: rgb(235, 40, 10);
   }
   
   .navbar .navbar-nav>li>a:hover {
-    background: rgb(173, 221, 230);
+    background: rgb(5, 55, 163);
   }
 
   .nav-link {
-      color: rgba(36, 0, 167, 0.459) !important;
+      color: rgb(255, 255, 255) !important;
   }
 
   .nav-item.active .nav-link {
-      color: rgb(72, 21, 255) !important;
+      color: rgb(0, 28, 155) !important;
   }
 
   .navbar-text {
-      color: rgb(72, 21, 255) !important;
+      color: rgb(255, 255, 255) !important;
   }
 
 body {
   font-family: 'Audiowide', sans-serif !important;
+  background-color: rgba(174, 243, 240, 0.425) !important;
 }

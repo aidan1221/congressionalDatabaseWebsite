@@ -7,10 +7,11 @@
     width: auto;
     text-align: left;
     padding: 0%;
-    color: rgba(0, 0, 90, 0.938);
+    color: rgb(252, 252, 252);
     top: 90px;
     left: 120px;
     position: absolute;
+    text-shadow: 2px 2px rgb(2, 16, 95);
   }
   
   #maintext h1{
@@ -27,18 +28,17 @@
 
       #maintext {
           padding-right: 30%;
-          color: rgba(0, 0, 90, 0.938);
           top: 5px;
           left: 40px;
           position: relative;
       }
 
       #maintext h1{
-        font-size: 6vw;
+        font-size: 7vw;
       }
 
       #maintext h2{
-        font-size: 4vw;
+        font-size: 6vw;
         padding-right: 40%;
         margin: 0;
       }
@@ -56,18 +56,17 @@
     #maintext {
         width: 80%;
         padding: 0;
-        color: rgba(0, 0, 90, 0.938);
         top: 90px;
         left: 10px;
         position: relative;
     }
 
     #maintext h1{
-      font-size: 4vw;
+      font-size: 7vw;
     }
 
     #maintext h2{
-      font-size: 2vw;
+      font-size: 6vw;
       margin: 0;
     }
 }
@@ -81,7 +80,6 @@
 
     #maintext {
         width: 80%;
-        color: rgba(0, 0, 90, 0.938);
         top: 90px;
         left: 120px;
         position: absolute;
