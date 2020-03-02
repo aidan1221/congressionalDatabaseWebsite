@@ -23,12 +23,16 @@ const connect = (request, response) => {
     
 }
 
+/*
+Querying Representative Data
+ */
+
 const getRepNames = (request, response) => {
 
     const congress = parseInt(request.params.congress);
 
     pool.query(
-        'SELECT rep_name FROM (SELECT * FROM representative_116 UNION SELECT * FROM representative_115) as allReps WHERE congress = $1',
+        'SELECT rep_name, state, party, terms FROM allreps WHERE congress = $1',
     [congress],
     (error, results) => {
         if(error) {
@@ -42,7 +46,7 @@ const getRepByState = (request, response) => {
     const congress = parseInt(request.params.congress);
     const state = request.params.state;
     pool.query(
-        'SELECT rep_name FROM (SELECT * FROM representative_116 UNION SELECT * FROM representative_115) as allReps WHERE congress=$1 AND state=$2',
+        'SELECT rep_name, party, terms FROM allreps WHERE congress=$1 AND state=$2',
         [congress, state],
         (error, results) => {
             if (error) {
@@ -66,9 +70,82 @@ const queryBlumenauer = (request, response) => {
     })
 }
 
+/* 
+Querying Senator Data
+*/
+const getSenatorNames = (request, response) => {
+
+    const congress = parseInt(request.params.congress);
+
+    pool.query(
+        'SELECT sen_name, state, party, terms FROM allsenators WHERE congress = $1',
+    [congress],
+    (error, results) => {
+        if(error) {
+            console.log(error)
+        }
+        response.status(200).json(results.rows);
+    })
+}
+
+const getSenatorByState = (request, response) => {
+    const congress = parseInt(request.params.congress);
+    const state = request.params.state;
+    pool.query(
+        'SELECT sen_name, party, terms FROM allsenators WHERE congress=$1 AND state=$2',
+        [congress, state],
+        (error, results) => {
+            if (error) {
+                console.log(error)
+            }
+            response.status(200).json(results.rows);
+        }
+    )
+}
+/*
+QUERYING BILL DATA
+*/
+
+const getHouseBillsByState = (request, response) => {
+    const congress = parseInt(request.params.congress);
+    const state = request.params.state;
+
+    pool.query('SELECT * FROM allhousebillswithsponsorsdata WHERE congress=$1 AND state=$2', 
+    [congress, state], 
+    (error, result) => {
+        if(error) {
+            console.log(error)
+        }
+        response.status(200).json(result.rows);
+    })
+}
+
+const getSenateBillsByState = (request, response) => {
+    const congress = parseInt(request.params.congress);
+    const state = request.params.state;
+
+    pool.query('SELECT * FROM allsenatebillswithsponsorsdata WHERE congress=$1 AND state=$2', 
+    [congress, state], 
+    (error, result) => {
+        if(error) {
+            console.log(error)
+        }
+        response.status(200).json(result.rows);
+    })
+}
+
+/*
+Querying Committee Data 
+*/
+
+
 module.exports = {
     connect,
     queryBlumenauer,
     getRepNames,
     getRepByState,
+    getSenatorNames,
+    getSenatorByState,
+    getHouseBillsByState,
+    getSenateBillsByState,
 }

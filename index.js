@@ -21,11 +21,33 @@ app.get('/', (request, response) => {
 
 app.get('/api/connect', db.connect);
 
+/*
+Endpoints for representative specific data
+*/
 app.get('/api/blumenauer', db.queryBlumenauer); // test query to retrieve Earl Blumenauer
 
 app.get('/api/representatives/:congress', db.getRepNames); // Get representative names by congress
 
 app.get('/api/representatives/:congress/:state', db.getRepByState); // Get representative for given congress and given state
+
+/*
+Endpoints for senator specific data
+*/
+app.get('/api/senators/:congress', db.getSenatorNames);
+
+app.get('/api/senators/:congress/:state', db.getSenatorByState);
+
+/*
+Endpoints for House bill specific data
+*/
+
+app.get('/api/housebills/:congress/:state', db.getHouseBillsByState);
+
+/* 
+Endpoints for Senate bill specific data
+*/
+
+app.get('/api/senatebills/:congress/:state', db.getSenateBillsByState);
 
 app.listen(port, () => {
     console.log(`App running on port ${port}`)
