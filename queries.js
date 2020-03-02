@@ -3,7 +3,7 @@ const pool = new Pool({
     user: 'postgres',
     host: '34.83.246.107',
     database: 'congresql',
-    password: 'mango okapi legend flank',
+    password: process.env.PASSWORD,
     port: 5432,
 })
 
