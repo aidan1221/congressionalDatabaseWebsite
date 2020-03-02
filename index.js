@@ -19,9 +19,13 @@ app.get('/', (request, response) => {
     response.json({info: 'Node.js, Express, Postgres API'});
 });
 
-app.get('/connect', db.connect);
+app.get('/api/connect', db.connect);
 
-app.get('/blumenauer', db.queryBlumenauer);
+app.get('/api/blumenauer', db.queryBlumenauer); // test query to retrieve Earl Blumenauer
+
+app.get('/api/representatives/:congress', db.getRepNames); // Get representative names by congress
+
+app.get('/api/representatives/:congress/:state', db.getRepByState); // Get representative for given congress and given state
 
 app.listen(port, () => {
     console.log(`App running on port ${port}`)

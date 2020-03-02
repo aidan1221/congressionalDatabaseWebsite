@@ -4,7 +4,7 @@
   "description": "packages for managing and hosting a conngressional database website",
   "main": "index.js",
   "scripts": {
-    "main": "node index.js"
+    "main": "nodemon index.js"
   },
   "repository": {
     "type": "git",

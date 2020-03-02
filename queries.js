@@ -3,7 +3,7 @@ const pool = new Pool({
     user: 'postgres',
     host: '34.83.246.107',
     database: 'congresql',
-    password: process.env.PASSWORD,
+    password: process.env.DB_PASSWORD,
     port: 5432,
 })
 
@@ -23,6 +23,35 @@ const connect = (request, response) => {
     
 }
 
+const getRepNames = (request, response) => {
+
+    const congress = parseInt(request.params.congress);
+
+    pool.query(
+        'SELECT rep_name FROM (SELECT * FROM representative_116 UNION SELECT * FROM representative_115) as allReps WHERE congress = $1',
+    [congress],
+    (error, results) => {
+        if(error) {
+            console.log(error)
+        }
+        response.status(200).json(results.rows);
+    })
+}
+
+const getRepByState = (request, response) => {
+    const congress = parseInt(request.params.congress);
+    const state = request.params.state;
+    pool.query(
+        'SELECT rep_name FROM (SELECT * FROM representative_116 UNION SELECT * FROM representative_115) as allReps WHERE congress=$1 AND state=$2',
+        [congress, state],
+        (error, results) => {
+            if (error) {
+                console.log(error)
+            }
+            response.status(200).json(results.rows);
+        }
+    )
+}
 
 const queryBlumenauer = (request, response) => {
 
@@ -40,4 +69,6 @@ const queryBlumenauer = (request, response) => {
 module.exports = {
     connect,
     queryBlumenauer,
+    getRepNames,
+    getRepByState,
 }
