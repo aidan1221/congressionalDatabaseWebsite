@@ -2,11 +2,15 @@
   position: relative;
   float: none;
   margin: 0 auto;
-  margin-top: 250px;
+  margin-top: 100px;
 }
 
 #pageinfo {
   color: white;
+}
+
+#queryoptions {
+  margin-bottom: 50px;
 }
 
 #querylink {
@@ -80,6 +84,7 @@ ul {
   overflow-y: scroll;
   position: relative;
   left: 5%;
+  margin-bottom: 50px;
 }
 
 #querylist a {
