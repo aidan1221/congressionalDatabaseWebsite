@@ -56,10 +56,6 @@ ul {
   padding: 8px 8px 8px 8px;
 }
 
-#root {
-  margin-right: 150px;
-}
-
 .node {
   cursor: pointer;
   user-select: none; 
@@ -76,6 +72,23 @@ ul {
 
 .hidden {
   display: none;
+}
+
+.active #item{
+  color: #6441a5;
+  background-color: white;
+}
+
+.querybtn {
+  position: fixed;
+  top: 100px;
+  right: 100px;
+  border: 3px solid #6441a5;
+  background-color: rgb(80, 80, 80);
+  color: rgb(255, 255, 255);
+  border-radius: 10px;
+  padding: 8px 8px 8px 8px;
+  cursor: pointer;
 }
 
 #querylist {

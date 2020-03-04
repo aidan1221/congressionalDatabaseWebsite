@@ -10,14 +10,7 @@
     <link href="https://fonts.googleapis.com/css?family=Audiowide&display=swap" rel="stylesheet"> 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <title>Query</title>
-    <script>
-        $(document).ready(function () {
-            $('.node').click(function() {
-                $(this).next('.hidden').slideToggle();
-                $(this).parent().siblings().find('ul').slideUp();
-            });
-        });
-    </script>
+    <script src="querytree.js"></script>
 </head>
 <body>
     <header>
@@ -45,58 +38,110 @@
     <main>
         <div class="container" id="querytree">
             <ul id="tree">
-                <li id="root"><span class="node"><a id="item">Congress Person</a></span>
+                <li id="root"><span class="node"><a id="item">Congress People</a></span>
                     <ul class="hidden">
-                        <li id="root"><span class="node"><a id="item">Congress Person</a></span>
+                        <li id="root"><span class="node"><a id="item">115</a></span>
                             <ul class="hidden">
-                                <li><a href="#" id="queryitem">Query</a></li>
-                                <li><a href="#" id="queryitem">Query</a></li>
-                            </ul>
-                        </li>
-                        <li id="root"><span class="node"><a id="item">Congress Person</a></span>
-                            <ul class="hidden">
-                                <li><a href="#" id="queryitem">Query</a></li>
-                                <li><a href="#" id="queryitem">Query</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-                <li id="root"><span class="node"><a id="item">Chamber</a></span>
-                    <ul class="hidden">
-                        <li id="root"><span class="node"><a id="item">House</a></span>
-                            <ul class="hidden">
-                                <li><a href="#" id="queryitem">Query</a></li>
-                                <li><a href="#" id="queryitem">Query</a></li>
-                            </ul>
-                        </li>
-                        <li id="root"><span class="node"><a id="item">Senate</a></span>
-                            <ul class="hidden">
-                                <li><a href="#" id="queryitem">Query</a></li>
-                                <li><a href="#" id="queryitem">Query</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-                <li id="root"><span class="node"><a id="item">State</a></span>
-                    <ul class="hidden">
-                        <li id="root"><span class="node"><a id="item">State</a></span>
-                            <ul class="hidden">
-                                <li><a href="#" id="queryitem">Query</a></li>
-                                <li><a href="#" id="queryitem">Query</a></li>
-                            </ul>
-                        </li>
-                        <li id="root"><span class="node"><a id="item">State</a></span>
-                            <ul class="hidden">
-                                <li><span class="node"><a id="item">State</a></span>
+                                <li id="root"><span class="node"><a id="item">House</a></span>
                                     <ul class="hidden">
-                                        <li><a href="#" id="queryitem">Query</a></li>
-                                        <li><a href="#" id="queryitem">Query</a></li>
+                                        <li id="root"><span class="node"><a id="item">Committee</a></span>
+                                            <ul class="hidden">
+                                                <li><a href="#" id="queryitem">List of Committees</a></li>
+                                            </ul>
+                                        </li>
+                                        <li id="root"><span class="node"><a id="item">State</a></span>
+                                            <ul class="hidden">
+                                                <li><a href="#" id="queryitem">List of States</a></li>
+                                            </ul>
+                                        </li>
                                     </ul>
                                 </li>
-                                <li><span class="node"><a id="item">State</a></span>
+                                <li id="root"><span class="node"><a id="item">Senate</a></span>
                                     <ul class="hidden">
-                                        <li><a href="#" id="queryitem">Query</a></li>
-                                        <li><a href="#" id="queryitem">Query</a></li>
+                                        <li id="root"><span class="node"><a id="item">Committee</a></span>
+                                            <ul class="hidden">
+                                                <li><a href="#" id="queryitem">List of Committees</a></li>
+                                            </ul>
+                                        </li>
+                                        <li id="root"><span class="node"><a id="item">State</a></span>
+                                            <ul class="hidden">
+                                                <li><a href="#" id="queryitem">List of States</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li id="root"><span class="node"><a id="item">116</a></span>
+                            <ul class="hidden">
+                                <li id="root"><span class="node"><a id="item">House</a></span>
+                                    <ul class="hidden">
+                                        <li id="root"><span class="node"><a id="item">Committee</a></span>
+                                            <ul class="hidden">
+                                                <li><a href="#" id="queryitem">List of Committees</a></li>
+                                            </ul>
+                                        </li>
+                                        <li id="root"><span class="node"><a id="item">State</a></span>
+                                            <ul class="hidden">
+                                                <li><a href="#" id="queryitem">List of States</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li id="root"><span class="node"><a id="item">Senate</a></span>
+                                    <ul class="hidden">
+                                        <li id="root"><span class="node"><a id="item">Committee</a></span>
+                                            <ul class="hidden">
+                                                <li><a href="#" id="queryitem">List of Committees</a></li>
+                                            </ul>
+                                        </li>
+                                        <li id="root"><span class="node"><a id="item">State</a></span>
+                                            <ul class="hidden">
+                                                <li><a href="#" id="queryitem">List of States</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li id="root"><span class="node"><a id="item">Bills</a></span>
+                    <ul class="hidden">
+                        <li id="root"><span class="node"><a id="item">Bills</a></span>
+                            <ul class="hidden">
+                                <li><a href="#" id="queryitem">Bills</a></li>
+                                <li><a href="#" id="queryitem">Bills</a></li>
+                            </ul>
+                        </li>
+                        <li id="root"><span class="node"><a id="item">Bills</a></span>
+                            <ul class="hidden">
+                                <li><a href="#" id="queryitem">Bills</a></li>
+                                <li><a href="#" id="queryitem">Bills</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li id="root"><span class="node"><a id="item">Committees</a></span>
+                    <ul class="hidden">
+                        <li id="root"><span class="node"><a id="item">Committees</a></span>
+                            <ul class="hidden">
+                                <li><a href="#" id="queryitem">Committees</a></li>
+                                <li><a href="#" id="queryitem">Committees</a></li>
+                            </ul>
+                        </li>
+                        <li id="root"><span class="node"><a id="item">Committees</a></span>
+                            <ul class="hidden">
+                                <li><span class="node"><a id="item">Committees</a></span>
+                                    <ul class="hidden">
+                                        <li><a href="#" id="queryitem">Committees</a></li>
+                                        <li><a href="#" id="queryitem">Committees</a></li>
+                                    </ul>
+                                </li>
+                                <li><span class="node"><a id="item">Committees</a></span>
+                                    <ul class="hidden">
+                                        <li><a href="#" id="queryitem">Committees</a></li>
+                                        <li><a href="#" id="queryitem">Committees</a></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -104,6 +149,7 @@
                     </ul>
                 </li>
             </ul> 
+            <button class="querybtn" type="submit">Query</button>
         </div>
     </main>
 </body>
