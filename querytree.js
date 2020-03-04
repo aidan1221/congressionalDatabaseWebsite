@@ -6,4 +6,7 @@ $(document).ready(function () {
         $(this).parent().siblings().find('.active').removeClass('active');
         $(this).addClass('active');
     });
+    $('.active').click(function () {
+        console.log(this.id);
+    });
 });

@@ -40,7 +40,7 @@ ul {
   font-size: 1.5vw;
 }
 
-#item {
+.item {
   border: 3px solid #6441a5;
   background-color: rgb(80, 80, 80);
   color: rgb(255, 255, 255);
@@ -48,7 +48,7 @@ ul {
   padding: 8px 8px 8px 8px;
 }
 
-#queryitem {
+.queryitem {
   border: 3px solid #6441a5;
   background-color: rgb(102, 102, 102);
   color: white;
@@ -74,7 +74,7 @@ ul {
   display: none;
 }
 
-.active #item{
+.active .item{
   color: #6441a5;
   background-color: white;
 }
