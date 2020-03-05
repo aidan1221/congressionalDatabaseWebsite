@@ -57,6 +57,13 @@ const getRepByState = (request, response) => {
     )
 }
 
+const getRepByCommittee = (request, response) => {
+    const congress = parseInt(request.params.congress);
+    const committee = request.params.committee;
+
+    pool.query() // query for rep by committee must be implemented (waiting on data)
+}
+
 const queryBlumenauer = (request, response) => {
 
     const name = 'Earl Blumenauer';
@@ -102,6 +109,14 @@ const getSenatorByState = (request, response) => {
         }
     )
 }
+
+const getSenatorByCommittee = (request, response) => {
+    const congress = parseInt(request.params.congress);
+    const committee = request.params.committee;
+
+    pool.query() // query for senator by committee must be implemented (waiting on data)
+
+}
 /*
 QUERYING BILL DATA
 */
@@ -110,7 +125,7 @@ const getHouseBillsByState = (request, response) => {
     const congress = parseInt(request.params.congress);
     const state = request.params.state;
 
-    pool.query('SELECT * FROM allhousebillswithsponsorsdata WHERE congress=$1 AND state=$2', 
+    pool.query('SELECT * FROM allhousebillswithsponsorsdata WHERE congress=$1 AND state=$2 ORDER BY sponsor ASC', 
     [congress, state], 
     (error, result) => {
         if(error) {
@@ -124,8 +139,36 @@ const getSenateBillsByState = (request, response) => {
     const congress = parseInt(request.params.congress);
     const state = request.params.state;
 
-    pool.query('SELECT * FROM allsenatebillswithsponsorsdata WHERE congress=$1 AND state=$2', 
+    pool.query('SELECT * FROM allsenatebillswithsponsorsdata WHERE congress=$1 AND state=$2 ORDER BY sponsor ASC', 
     [congress, state], 
+    (error, result) => {
+        if(error) {
+            console.log(error)
+        }
+        response.status(200).json(result.rows);
+    })
+}
+
+const getHouseBillsByParty = (request, response) => {
+    const congress = parseInt(request.params.congress);
+    const party = request.params.party;
+
+    pool.query('SELECT * FROM allhousebillswithsponsorsdata WHERE congress=$1 AND party=$2 ORDER BY state ASC, sponsor ASC', 
+    [congress, party], 
+    (error, result) => {
+        if(error) {
+            console.log(error)
+        }
+        response.status(200).json(result.rows);
+    })
+}
+
+const getSenateBillsByParty = (request, response) => {
+    const congress = parseInt(request.params.congress);
+    const party = request.params.party;
+
+    pool.query('SELECT * FROM allsenatebillswithsponsorsdata WHERE congress=$1 AND party=$2 ORDER BY state ASC, sponsor ASC', 
+    [congress, party], 
     (error, result) => {
         if(error) {
             console.log(error)
@@ -138,6 +181,21 @@ const getSenateBillsByState = (request, response) => {
 Querying Committee Data 
 */
 
+const getCommittees = (request, response) =>  {
+    const congress = parseInt(request.params.congress);
+    const chamber = request.params.chamber;
+    
+    pool.query() // query for all committee
+}
+
+const getSubcommittees = (request, resposne) =>  {
+    const congress = parseInt(request.params.congress);
+    const chamber = request.params.chamber;
+    const committee = request.params.committee;
+    
+    pool.query() // query for all committee
+}
+
 
 module.exports = {
     connect,
@@ -148,4 +206,6 @@ module.exports = {
     getSenatorByState,
     getHouseBillsByState,
     getSenateBillsByState,
+    getHouseBillsByParty,
+    getSenateBillsByParty,
 }

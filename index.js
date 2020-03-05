@@ -41,13 +41,17 @@ app.get('/api/senators/:congress/:state', db.getSenatorByState);
 Endpoints for House bill specific data
 */
 
-app.get('/api/housebills/:congress/:state', db.getHouseBillsByState);
+app.get('/api/housebillsbystate/:congress/:state', db.getHouseBillsByState);
+
+app.get('/api/housebillsbyparty/:congress/:party', db.getHouseBillsByParty);
 
 /* 
 Endpoints for Senate bill specific data
 */
 
-app.get('/api/senatebills/:congress/:state', db.getSenateBillsByState);
+app.get('/api/senatebillsbystate/:congress/:state', db.getSenateBillsByState);
+app.get('/api/senatebillsbyparty/:congress/:party', db.getHouseBillsByParty);
+
 
 app.listen(port, () => {
     console.log(`App running on port ${port}`)
