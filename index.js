@@ -2,13 +2,21 @@
 
 const express = require('express');
 const bodyParser = require('body-parser');
+const path = require('path');
+const cors = require('cors');
 const db = require('./queries')
 
 const app = express();
 
 const port = 5000;
 
+app.use(express.static('../congressionalDatabaseWebsite/'));
+app.use(express.static(path.join(__dirname, 'pages')));
+app.use(express.static('styles'));
+app.use(express.static(path.join(__dirname, 'images')));
+app.use(express.static(path.join(__dirname, 'scripts')));
 app.use(bodyParser.json());
+app.use(cors());
 app.use(
     bodyParser.urlencoded({
         extended: true,
@@ -16,8 +24,19 @@ app.use(
 );
 
 app.get('/', (request, response) => {
-    response.json({info: 'Node.js, Express, Postgres API'});
+    response.status(200);
+    response.sendFile(path.join(__dirname, 'index.html'));
+
 });
+
+app.get('/datascience', (req, res) => {
+
+    
+
+    res.status(200);
+    res.sendFile(path.join(__dirname, '/pages/datascience.html'));
+    
+})
 
 app.get('/api/connect', db.connect);
 
