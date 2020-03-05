@@ -7,10 +7,6 @@ $(document).ready(function () {
         $(this).addClass('active');
     });
 
-    $('.active').click(function () {
-        console.log(this.id);
-    });
-
     $("#committee5").change(function() {
         if ($(this).data('options') === undefined) {
           /*Taking an array of all options-2 and kind of embedding it on the select1*/
