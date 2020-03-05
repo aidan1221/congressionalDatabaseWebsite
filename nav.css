@@ -1,0 +1,25 @@
+.navbar-nav li{
+    margin-left: 10px;
+  }
+
+  .navbar .navbar-nav>li>a:hover {
+    color: #6441a5 !important;
+  }
+
+  .nav-link {
+      color: rgb(255, 255, 255) !important;
+  }
+
+  .nav-item.active .nav-link {
+      color: #6441a5 !important;
+      border-bottom: 3px solid #6441a5;
+  }
+
+  .navbar-text a{
+      color: #6441a5 !important;
+  }
+
+body {
+  font-family: 'Audiowide', sans-serif !important;
+  background-color: rgba(0, 0, 0, 0.945) !important;
+}

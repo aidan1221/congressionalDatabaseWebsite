@@ -1,0 +1,56 @@
+#aboutimage{
+  padding-top: 10px;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+#aboutinfo {
+  color: rgb(255, 255, 255) !important;
+}
+
+.card-footer a{
+  position: absolute;
+  bottom: 0;
+  color: white;
+}
+
+.card-footer a:hover{
+  color: #6441a5;
+}
+
+@media (max-width: 420px) {
+  #aboutimage{
+    padding-top: 50%;
+  }
+  
+  #aboutinfo h3{
+    font-size: 5vw;
+  }
+
+  .card-title {
+    font-size: 6vw;
+  }
+
+  .card-text {
+    font-size: 5vw;
+    text-align: center;
+  }
+}
+
+@media (min-width: 421px) and (max-width: 768px) {
+  #aboutimage{
+    padding-top: 20%;
+  }
+
+  #bios{
+    width: 75%;
+  }
+}
+
+.container {
+  position: relative;
+  text-align: center;
+  float: none;
+  margin: 0 auto;
+  margin-top: 100px;
+}

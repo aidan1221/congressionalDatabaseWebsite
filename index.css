@@ -1,0 +1,104 @@
+  #main {
+    background-image: url("uscapitol2.jpg");
+    background-size: cover;
+  }
+  
+  #maintext{
+    width: auto;
+    text-align: left;
+    padding: 0%;
+    color: rgb(252, 252, 252);
+    top: 90px;
+    left: 120px;
+    position: absolute;
+    text-shadow: 2px 2px rgb(2, 16, 95);
+  }
+  
+  #maintext h1{
+    margin-bottom: 30px;
+  }
+
+  @media (max-width: 420px) {
+      #main {
+          padding-top: 160%;
+          padding-bottom: 50%;
+          background-position-x: 50%;
+          position: relative;
+      }
+
+      #maintext {
+          padding-right: 30%;
+          top: 5px;
+          left: 40px;
+          position: relative;
+      }
+
+      #maintext h1{
+        font-size: 7vw;
+      }
+
+      #maintext h2{
+        font-size: 6vw;
+        padding-right: 40%;
+        margin: 0;
+      }
+  }
+
+  @media (min-width: 421px) and (max-width: 768px) {
+    #main {
+        padding-top: 60%;
+        padding-bottom: 50%;
+        background-position-y: 35%;
+        background-position-x: 50%;
+        position: relative;
+    }
+
+    #maintext {
+        width: 80%;
+        padding: 0;
+        top: 90px;
+        left: 10px;
+        position: relative;
+    }
+
+    #maintext h1{
+      font-size: 7vw;
+    }
+
+    #maintext h2{
+      font-size: 6vw;
+      margin: 0;
+    }
+}
+
+@media (min-width: 769px) {
+    #main {
+        padding-top: 35%;
+        background-position-y: 35%;
+        position: relative;
+    }
+
+    #maintext {
+        width: 80%;
+        top: 90px;
+        left: 120px;
+        position: absolute;
+    }
+
+    #maintext h1{
+      font-size: 4vw;
+    }
+
+    #maintext h2{
+      font-size: 2vw;
+      margin: 0;
+    }
+}
+  
+  .container {
+    position: relative;
+    text-align: center;
+    float: none;
+    margin: 0 auto;
+    margin-top: 100px;
+  }
