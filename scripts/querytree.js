@@ -47,3 +47,9 @@ $(document).ready(function () {
         $('#subcommittee8').html(options);
     });
 });
+
+
+function setParam(id) {
+
+  document.getElementById('hidden-param').value = id
+}

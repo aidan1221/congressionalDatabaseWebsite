@@ -37,21 +37,22 @@
     </header>
     <main>
         <div class="container" id="querytree">
-            <form action="#" class="form-group">
+            <form action="/display-data.html?hiddenParam" class="form-group" method="GET">
+                <input id="hidden-param" name="hiddenParam" value="" hidden>
                 <ul id="tree">
-                    <li class="active" id="root"><span class="node"><a class="item">Congress Person</a></span>
+                    <li class="active" id="congress-person"><span class="node"><a class="item" onclick="setParam('congress-person')">Congress Person</a></span>
                         <ul class="hidden">
-                            <li id="root"><span class="node"><a class="item">116</a></span>
+                            <li id="congress-person-116"><span class="node"><a class="item">116</a></span>
                                 <ul class="hidden">
-                                    <li id="root"><span class="node"><a class="item">House</a></span>
+                                    <li id="congress-person-116-house"><span class="node"><a class="item">House</a></span>
                                         <ul class="hidden">
-                                            <li id="root"><span class="node"><a class="item">State</a></span>
+                                            <li id="congress-person-116-house-bystate"><span class="node"><a class="item">State</a></span>
                                                 <ul class="hidden">
                                                     <li>
                                                         <div class="form-group">
                                                             <label for="state1" class="col-sm-2 control-label">State</label>
                                                             <div class="col-sm-5">
-                                                                <select class="form-control" id="state1" name="state1">
+                                                                <select class="form-control" id="state1" name="state1" form="decoy">
                                                                     <option value="AK1">Alaska</option>
                                                                     <option value="AL1">Alabama</option>
                                                                     <option value="AR1">Arkansas</option>
@@ -110,12 +111,12 @@
                                                     </li>
                                                 </ul>
                                             </li>
-                                            <li id="root"><span class="node"><a class="item">Committee</a></span>
+                                            <li id="congress-person-116-house-bycommittee"><span class="node"><a class="item">Committee</a></span>
                                                 <ul class="hidden">
                                                     <li><div class="form-group">
                                                         <label for="committee1" class="col-sm-2 control-label">Committee</label>
                                                         <div class="col-sm-5">
-                                                            <select class="form-control" id="committee1" name="committee1">
+                                                            <select class="form-control" id="committee1" name="committee1" form="decoy">
                                                                 <option value="Argiculture1">Argiculture</option>
                                                                 <option value="Appropriations1">Appropriations</option>
                                                                 <option value="Armed Services1">Armed Services</option>
@@ -143,14 +144,14 @@
                                             </li>
                                         </ul>
                                     </li>
-                                    <li id="root"><span class="node"><a class="item">Senate</a></span>
+                                    <li id="congress-person-116-senate"><span class="node"><a class="item">Senate</a></span>
                                         <ul class="hidden">
-                                            <li id="root"><span class="node"><a class="item">State</a></span>
+                                            <li id="congress-person-116-senate-bystate"><span class="node"><a class="item">State</a></span>
                                                 <ul class="hidden">
                                                     <li><div class="form-group">
                                                         <label for="state2" class="col-sm-2 control-label">State</label>
                                                         <div class="col-sm-5">
-                                                            <select class="form-control" id="state2" name="state2">
+                                                            <select class="form-control" id="state2" name="state2" form="decoy">
                                                                 <option value="AK2">Alaska</option>
                                                                 <option value="AL2">Alabama</option>
                                                                 <option value="AR2">Arkansas</option>
@@ -208,12 +209,12 @@
                                                     </div></li>
                                                 </ul>
                                             </li>
-                                            <li id="root"><span class="node"><a class="item">Committee</a></span>
+                                            <li id="congress-person-116-senate-bycommittee"><span class="node"><a class="item">Committee</a></span>
                                                 <ul class="hidden">
                                                     <li><div class="form-group">
                                                         <label for="committee2" class="col-sm-2 control-label">Committee</label>
                                                         <div class="col-sm-5">
-                                                            <select class="form-control" id="committee2" name="committee2">
+                                                            <select class="form-control" id="committee2" name="committee2" form="decoy">
                                                                 <option value="ANF2">Argiculture, Nutrition, and Forestry</option>
                                                                 <option value="APP2">Appropriations</option>
                                                                 <option value="ARS2">Armed Services</option>
@@ -239,16 +240,16 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li id="root"><span class="node"><a class="item">115</a></span>
+                            <li id="congress-person-115"><span class="node"><a class="item">115</a></span>
                                 <ul class="hidden">
-                                    <li id="root"><span class="node"><a class="item">House</a></span>
+                                    <li id="congress-person-115-house"><span class="node"><a class="item">House</a></span>
                                         <ul class="hidden">
-                                            <li id="root"><span class="node"><a class="item">State</a></span>
+                                            <li id="congress-person-115-house-bystate"><span class="node"><a class="item">State</a></span>
                                                 <ul class="hidden">
                                                     <li><div class="form-group">
                                                         <label for="state3" class="col-sm-2 control-label">State</label>
                                                         <div class="col-sm-5">
-                                                            <select class="form-control" id="state3" name="state3">
+                                                            <select class="form-control" id="state3" name="state3" form="decoy">
                                                                 <option value="AK3">Alaska</option>
                                                                 <option value="AL3">Alabama</option>
                                                                 <option value="AR3">Arkansas</option>
@@ -306,12 +307,12 @@
                                                     </div></li>
                                                 </ul>
                                             </li>
-                                            <li id="root"><span class="node"><a class="item">Committee</a></span>
+                                            <li id="congress-person-115-house-bycommittee"><span class="node"><a class="item">Committee</a></span>
                                                 <ul class="hidden">
                                                     <li><div class="form-group">
                                                         <label for="committee3" class="col-sm-2 control-label">Committee</label>
                                                         <div class="col-sm-5">
-                                                            <select class="form-control" id="committee3" name="committee3">
+                                                            <select class="form-control" id="committee3" name="committee3" form="decoy">
                                                                 <option value="ARG3">Argiculture</option>
                                                                 <option value="APP3">Appropriations</option>
                                                                 <option value="ARS3">Armed Services</option>
@@ -339,14 +340,14 @@
                                             </li>
                                         </ul>
                                     </li>
-                                    <li id="root"><span class="node"><a class="item">Senate</a></span>
+                                    <li id="congress-person-115-senate"><span class="node"><a class="item">Senate</a></span>
                                         <ul class="hidden">
-                                            <li id="root"><span class="node"><a class="item">State</a></span>
+                                            <li id="congress-person-115-senate-bystate"><span class="node"><a class="item">State</a></span>
                                                 <ul class="hidden">
                                                     <li><div class="form-group">
                                                         <label for="state4" class="col-sm-2 control-label">State</label>
                                                         <div class="col-sm-5">
-                                                            <select class="form-control" id="state4" name="state4">
+                                                            <select class="form-control" id="state4" name="state4" form="decoy">
                                                                 <option value="AK4">Alaska</option>
                                                                 <option value="AL4">Alabama</option>
                                                                 <option value="AR4">Arkansas</option>
@@ -404,12 +405,12 @@
                                                     </div></li>
                                                 </ul>
                                             </li>
-                                            <li id="root"><span class="node"><a class="item">Committee</a></span>
+                                            <li id="congress-person-115-senate-bystate"><span class="node"><a class="item">Committee</a></span>
                                                 <ul class="hidden">
                                                     <li><div class="form-group">
                                                         <label for="committee4" class="col-sm-2 control-label">Committee</label>
                                                         <div class="col-sm-5">
-                                                            <select class="form-control" id="committee4" name="committee4">
+                                                            <select class="form-control" id="committee4" name="committee4" form="decoy">
                                                                 <option value="ANF4">Argiculture, Nutrition, and Forestry</option>
                                                                 <option value="APP4">Appropriations</option>
                                                                 <option value="ARS4">Armed Services</option>
@@ -437,16 +438,16 @@
                             </li>
                         </ul>
                     </li>
-                    <li id="root"><span class="node"><a class="item">Committee</a></span>
+                    <li id="committee"><span class="node"><a class="item">Committee</a></span>
                         <ul class="hidden">
-                            <li id="root"><span class="node"><a class="item">116</a></span>
+                            <li id="committee-116"><span class="node"><a class="item">116</a></span>
                                 <ul class="hidden">
-                                    <li id="root"><span class="node"><a class="item">House</a></span>
+                                    <li id="committee-116-house"><span class="node"><a class="item">House</a></span>
                                         <ul class="hidden">
                                             <li><div class="form-group">
                                                 <label for="committee5" class="col-sm-2 control-label">Committee</label>
                                                 <div class="col-sm-5">
-                                                    <select class="form-control" name="committee5" id="committee5">
+                                                    <select class="form-control" name="committee5" id="committee5" form="decoy">
                                                         <option value="Argiculture5">Argiculture</option>
                                                         <option value="Appropriations5">Appropriations</option>
                                                         <option value="Armed_Services5">Armed Services</option>
@@ -471,7 +472,7 @@
                                                 </div>
                                                 <label for="subcommittee5" class="col-sm-2 control-label">Subcommittee</label>
                                                 <div class="col-sm-5">
-                                                    <select class="form-control" name="subcommittee5" id="subcommittee5">
+                                                    <select class="form-control" name="subcommittee5" id="subcommittee5" form="decoy">
                                                         <option value="Argiculture5">Biotechnology, Horticulture, and Research</option>
                                                         <option value="Argiculture5">Commodity Exchanges, Energy, and Credit</option>
                                                         <option value="Argiculture5">Conservation and Forestry</option>
@@ -580,12 +581,12 @@
                                             </div></li>
                                         </ul>
                                     </li>
-                                    <li id="root"><span class="node"><a class="item">Senate</a></span>
+                                    <li id="committee-116-senate"><span class="node"><a class="item">Senate</a></span>
                                         <ul class="hidden">
                                             <li><div class="form-group">
                                                 <label for="committee6" class="col-sm-2 control-label">Committee</label>
                                                 <div class="col-sm-5">
-                                                    <select class="form-control" id="committee6" name="committee6">
+                                                    <select class="form-control" id="committee6" name="committee6" form="decoy">
                                                         <option value="ANF6">Argiculture, Nutrition, and Forestry</option>
                                                         <option value="APP6">Appropriations</option>
                                                         <option value="ARS6">Armed Services</option>
@@ -606,7 +607,7 @@
                                                 </div>
                                                 <label for="subcommittee6" class="col-sm-2 control-label">Subcommittee</label>
                                                 <div class="col-sm-5">
-                                                    <select class="form-control" id="subcommittee6" name="subcommittee6">
+                                                    <select class="form-control" id="subcommittee6" name="subcommittee6" form="decoy">
                                                         <option value="ANF6">Commodities, Risk Management, and Trade</option>
                                                         <option value="ANF6">Conservation, Forestry, and Natural Resources</option>
                                                         <option value="ANF6">Livestock, Marketing, and Agriculture Security</option>
@@ -693,14 +694,14 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li id="root"><span class="node"><a class="item">115</a></span>
+                            <li id="committee-115"><span class="node"><a class="item">115</a></span>
                                 <ul class="hidden">
-                                    <li id="root"><span class="node"><a class="item">House</a></span>
+                                    <li id="committee-115-house"><span class="node"><a class="item">House</a></span>
                                         <ul class="hidden">
                                             <li><div class="form-group">
                                                 <label for="committee7" class="col-sm-2 control-label">Committee</label>
                                                 <div class="col-sm-5">
-                                                    <select class="form-control" name="committee7" id="committee7">
+                                                    <select class="form-control" name="committee7" id="committee7" form="decoy">
                                                         <option value="Argiculture7">Argiculture</option>
                                                         <option value="Appropriations7">Appropriations</option>
                                                         <option value="Armed_Services7">Armed Services</option>
@@ -725,7 +726,7 @@
                                                 </div>
                                                 <label for="subcommittee7" class="col-sm-2 control-label">Subcommittee</label>
                                                 <div class="col-sm-5">
-                                                    <select class="form-control" name="subcommittee7" id="subcommittee7">
+                                                    <select class="form-control" name="subcommittee7" id="subcommittee7" form="decoy">
                                                         <option value="Argiculture7">Biotechnology, Horticulture, and Research</option>
                                                         <option value="Argiculture7">Commodity Exchanges, Energy, and Credit</option>
                                                         <option value="Argiculture7">Conservation and Forestry</option>
@@ -834,13 +835,13 @@
                                             </div></li>
                                         </ul>
                                     </li>
-                                    <li id="root"><span class="node"><a class="item">Senate</a></span>
+                                    <li id="committtee-115-senate"><span class="node"><a class="item">Senate</a></span>
                                         <ul class="hidden">
                                             <li>
                                                 <div class="form-group">
                                                 <label for="committee8" class="col-sm-2 control-label">Committee</label>
                                                     <div class="col-sm-5">
-                                                        <select class="form-control" id="committee8" name="committee8">
+                                                        <select class="form-control" id="committee8" name="committee8" form="decoy">
                                                             <option value="ANF8">Argiculture, Nutrition, and Forestry</option>
                                                             <option value="APP8">Appropriations</option>
                                                             <option value="ARS8">Armed Services</option>
@@ -861,7 +862,7 @@
                                                     </div>
                                                     <label for="subcommittee8" class="col-sm-2 control-label">Subcommittee</label>
                                                     <div class="col-sm-5">
-                                                        <select class="form-control" id="subcommittee8" name="subcommittee8">
+                                                        <select class="form-control" id="subcommittee8" name="subcommittee8" form="decoy">
                                                             <option value="ANF8">Commodities, Risk Management, and Trade</option>
                                                             <option value="ANF8">Conservation, Forestry, and Natural Resources</option>
                                                             <option value="ANF8">Livestock, Marketing, and Agriculture Security</option>
@@ -951,18 +952,18 @@
                             </li>
                         </ul>
                     </li>
-                    <li id="root"><span class="node"><a class="item">Legislation</a></span>
+                    <li id="legislation"><span class="node"><a class="item">Legislation</a></span>
                         <ul class="hidden">
-                            <li id="root"><span class="node"><a class="item">116</a></span>
+                            <li id="legislation-116"><span class="node"><a class="item">116</a></span>
                                 <ul class="hidden">
-                                    <li id="root"><span class="node"><a class="item">House</a></span>
+                                    <li id="legislation-116-house"><span class="node"><a class="item">House</a></span>
                                         <ul class="hidden">
-                                            <li id="root"><span class="node"><a class="item">State</a></span>
+                                            <li id="legislation-116-house-bystate"><span class="node"><a class="item">State</a></span>
                                                 <ul class="hidden">
                                                     <li><div class="form-group">
                                                         <label for="state" class="col-sm-2 control-label">State</label>
                                                         <div class="col-sm-5">
-                                                            <select class="form-control" id="state" name="state">
+                                                            <select class="form-control" id="state" name="state" form="decoy">
                                                                 <option value="AK">Alaska</option>
                                                                 <option value="AL">Alabama</option>
                                                                 <option value="AR">Arkansas</option>
@@ -1020,7 +1021,7 @@
                                                     </div></li>
                                                 </ul>
                                             </li>
-                                            <li id="root"><span class="node"><a class="item">Party</a></span>
+                                            <li id="legislation-116-house-byparty"><span class="node"><a class="item">Party</a></span>
                                                 <ul class="hidden">
                                                     <li><a href="#" class="queryitem">R</a></li>
                                                     <li><a href="#" class="queryitem">D</a></li>
@@ -1029,20 +1030,20 @@
                                             </li>
                                         </ul>
                                     </li>
-                                    <li id="root"><span class="node"><a class="item">Senate</a></span>
+                                    <li id="legislation-116-senate"><span class="node"><a class="item">Senate</a></span>
                                     </li>
                                 </ul>
                             </li>
-                            <li id="root"><span class="node"><a class="item">115</a></span>
+                            <li id="legislation-115"><span class="node"><a class="item">115</a></span>
                                 <ul class="hidden">
-                                    <li id="root"><span class="node"><a class="item">House</a></span>
+                                    <li id="legislation-115-house"><span class="node"><a class="item">House</a></span>
                                         <ul class="hidden">
-                                            <li id="root"><span class="node"><a class="item">State</a></span>
+                                            <li id="legislation-115-house-bystate"><span class="node"><a class="item">State</a></span>
                                                 <ul class="hidden">
                                                     <li><div class="form-group">
                                                         <label for="state" class="col-sm-2 control-label">State</label>
                                                         <div class="col-sm-5">
-                                                            <select class="form-control" id="state" name="state">
+                                                            <select class="form-control" id="state" name="state" form="decoy">
                                                                 <option value="AK">Alaska</option>
                                                                 <option value="AL">Alabama</option>
                                                                 <option value="AR">Arkansas</option>
@@ -1100,7 +1101,7 @@
                                                     </div></li>
                                                 </ul>
                                             </li>
-                                            <li id="root"><span class="node"><a class="item">Party</a></span>
+                                            <li id="legislation-115-house-byparty"><span class="node"><a class="item">Party</a></span>
                                                 <ul class="hidden">
                                                     <li><a href="#" class="queryitem">R</a></li>
                                                     <li><a href="#" class="queryitem">D</a></li>
@@ -1109,7 +1110,7 @@
                                             </li>
                                         </ul>
                                     </li>
-                                    <li id="root"><span class="node"><a class="item">Senate</a></span>
+                                    <li id="legislation-115-senate"><span class="node"><a class="item">Senate</a></span>
                                     </li>
                                 </ul>
                             </li>
@@ -1121,5 +1122,6 @@
             </form>
         </div>
     </main>
+    <form id="decoy" hidden></form>
 </body>
 </html>
