@@ -58,6 +58,8 @@ app.get('/api/representatives/:congress', db.getRepNamesByCongress); // Get repr
 
 app.get('/api/representatives/:congress/orderbystate', db.getRepNamesByCongressORDERBYstate);
 
+app.get('/api/representatives/:congress/orderbycommittee', db.getRepNamesByCongressORDERBYcommittee);
+
 app.get('/api/representatives/:congress/:state', db.getRepByState); // Get representative for given congress and given state
 
 app.get('/api/representatives/bycommittee/:congress/:committee', db.getRepByCommittee)

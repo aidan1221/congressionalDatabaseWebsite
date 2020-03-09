@@ -45,6 +45,7 @@ async function queryData (queryParam) {
             break;
         case "congress-person-116-house-bycommittee":
             if(detailParam === ""){
+                var url = BASE_URL + '/api/representatives/116/orderbycommittee';
                 break;
             }
             else {

@@ -97,6 +97,21 @@ const getRepNamesByCongressORDERBYstate = (request, response) => {
     })
 }
 
+const getRepNamesByCongressORDERBYcommittee = (request, response) => {
+
+    const congress = parseInt(request.params.congress);
+
+    pool.query(
+        'SELECT rep_name as representative, state, district, party, terms, hc_name as committee FROM allhousecommitteeinfo NATURAL JOIN allreps WHERE congress = $1 ORDER BY committee asc, state asc, district asc',
+    [congress],
+    (error, results) => {
+        if(error) {
+            console.log( "API ERROR: " + error)
+        }
+        response.status(200).json(results.rows);
+    })
+}
+
 const getRepByState = (request, response) => {
     const congress = parseInt(request.params.congress);
     const state = request.params.state;
@@ -117,7 +132,7 @@ const getRepByCommittee = (request, response) => {
     const committee = request.params.committee;
 
     pool.query(
-        `SELECT rep_name as representative, hc_name as committee FROM allhousecommitteeinfo WHERE congress=$1 AND hc_name LIKE ('%${committee}%')`, 
+        `SELECT rep_name as representative, party, state, district, terms, hc_name as committee FROM allhousecommitteeinfo NATURAL JOIN allreps WHERE congress=$1 AND hc_name LIKE ('%${committee}%') ORDER BY state ASC`, 
         [congress],
         (error, results) => {
              if (error) {
@@ -270,6 +285,7 @@ module.exports = {
     queryBlumenauer,
     getRepNamesByCongress,
     getRepNamesByCongressORDERBYstate,
+    getRepNamesByCongressORDERBYcommittee,
     getRepByState,
     getRepByCommittee,
     getSenatorNames,
