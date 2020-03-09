@@ -45,7 +45,9 @@ Endpoints for representative specific data
 */
 app.get('/api/blumenauer', db.queryBlumenauer); // test query to retrieve Earl Blumenauer
 
-app.get('/api/representatives/:congress', db.getRepNames); // Get representative names by congress
+app.get('/api/representatives', db.getAllRepNames);
+
+app.get('/api/representatives/:congress', db.getRepNamesByCongress); // Get representative names by congress
 
 app.get('/api/representatives/:congress/:state', db.getRepByState); // Get representative for given congress and given state
 

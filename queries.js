@@ -27,12 +27,24 @@ const connect = (request, response) => {
 Querying Representative Data
  */
 
-const getRepNames = (request, response) => {
+const getAllRepNames = (request, response) => {
+    
+    pool.query(
+        'SELECT rep_name, state, district, party, terms, congress FROM allreps ORDER BY congress ASC, state ASC, rep_name ASC', (error, results) => {
+            if(error) {
+                console.log(error)
+            }
+            response.status(200).json(results.rows);
+        }
+    )
+}
+
+const getRepNamesByCongress = (request, response) => {
 
     const congress = parseInt(request.params.congress);
 
     pool.query(
-        'SELECT rep_name, state, party, terms FROM allreps WHERE congress = $1',
+        'SELECT rep_name, state, district, party, terms FROM allreps WHERE congress = $1',
     [congress],
     (error, results) => {
         if(error) {
@@ -46,7 +58,7 @@ const getRepByState = (request, response) => {
     const congress = parseInt(request.params.congress);
     const state = request.params.state;
     pool.query(
-        'SELECT rep_name, party, terms FROM allreps WHERE congress=$1 AND state=$2',
+        'SELECT rep_name, district, party, terms FROM allreps WHERE congress=$1 AND state=$2',
         [congress, state],
         (error, results) => {
             if (error) {
@@ -199,8 +211,9 @@ const getSubcommittees = (request, resposne) =>  {
 
 module.exports = {
     connect,
+    getAllRepNames,
     queryBlumenauer,
-    getRepNames,
+    getRepNamesByCongress,
     getRepByState,
     getSenatorNames,
     getSenatorByState,
