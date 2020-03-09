@@ -1,21 +1,62 @@
 const urlParams = new URLSearchParams(window.location.search);
 
-const queryParam = urlParams.get('hiddenParam');
+const queryParam = decodeURI(urlParams.get('hiddenParam'));
+const detailParam = decodeURI(urlParams.get('hiddenDetailParam'));
 
 console.log(`queryParam = ${queryParam}`);
 console.log(typeof(queryParam))
+
+const BASE_URL = 'http://localhost:5000';
 
 async function queryData (queryParam) {
 
     switch(queryParam) {
 
         case "congress-person":
-           var url = 'http://localhost:5000/api/representatives/';
-           console.log("WE'RE HERE");
+           var url = BASE_URL + '/api/allCongressPeople/';
            break;
-        default:
-            console.log("No good");
+        case "congress-person-116":
+            var url = BASE_URL + '/api/allCongressPeople/116';
             break;
+        case "congress-person-115":
+            var url = BASE_URL + '/api/allCongressPeople/115';
+            break;
+        case "congress-person-116-house":
+            var url = BASE_URL + '/api/representatives/116';
+            break;
+        case "congress-person-115-house":
+            var url = BASE_URL + '/api/representatives/115';
+            break;
+        case "congress-person-116-house-bystate":
+            if (detailParam === "") {
+                var url = BASE_URL + '/api/representatives/116/orderbystate';
+            }
+            else {
+                var url = BASE_URL + `/api/representatives/116/${detailParam}`;
+            }
+            break;
+        case "congress-person-115-house-bystate":
+            if (detailParam === "") {
+                var url = BASE_URL + '/api/representatives/115/orderbystate';
+            }
+            else {
+                var url = BASE_URL + `/api/representatives/115/${detailParam}`;
+            }
+            break;
+        case "congress-person-116-house-bycommittee":
+            if(detailParam === ""){
+                break;
+            }
+            else {
+                committee = detailParam.slice(0, detailParam.length - 1);
+                var url = BASE_URL + `/api/representatives/bycommittee/116/${committee}`;
+            }
+            
+            break;
+
+        // default:
+        //     console.log("No good");
+        //     break;
     }
 
     let data;

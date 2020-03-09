@@ -51,6 +51,10 @@ $(document).ready(function () {
 
 function setParam(id) {
 
+  if (String(id).includes('state') || String(id).includes('party') || String(id).includes('committee')) {
+    document.getElementById('hidden-detail-param').value = "";
+  }
+
   document.getElementById('hidden-param').value = id
 }
 

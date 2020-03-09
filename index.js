@@ -41,6 +41,13 @@ app.get('/datascience', (req, res) => {
 app.get('/api/connect', db.connect);
 
 /*
+Endpoints for mixed data
+*/
+app.get('/api/allCongressPeople', db.getAllCongressPeople);
+
+app.get('/api/allCongressPeople/:congress', db.getAllCongressPeopleByCongress);
+
+/*
 Endpoints for representative specific data
 */
 app.get('/api/blumenauer', db.queryBlumenauer); // test query to retrieve Earl Blumenauer
@@ -49,7 +56,11 @@ app.get('/api/representatives', db.getAllRepNames);
 
 app.get('/api/representatives/:congress', db.getRepNamesByCongress); // Get representative names by congress
 
+app.get('/api/representatives/:congress/orderbystate', db.getRepNamesByCongressORDERBYstate);
+
 app.get('/api/representatives/:congress/:state', db.getRepByState); // Get representative for given congress and given state
+
+app.get('/api/representatives/bycommittee/:congress/:committee', db.getRepByCommittee)
 
 /*
 Endpoints for senator specific data

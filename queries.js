@@ -22,6 +22,34 @@ const connect = (request, response) => {
     })
     
 }
+/* 
+Broad Queries 
+*/
+
+const getAllCongressPeople = (request, response) => {
+
+    pool.query(
+        'SELECT * FROM allcongresspeople', (error, results) => {
+            if(error) {
+                console.log("API ERROR: " + error)
+            }
+            response.status(200).json(results.rows);
+        }
+    )
+}
+
+const getAllCongressPeopleByCongress = (request, response) => {
+
+    const congress = request.params.congress;
+    pool.query(
+        'SELECT * FROM allcongresspeople WHERE congress=$1', [congress], (error, results) => {
+            if (error) {
+                console.log("API ERROR: " + error);
+            }
+            response.status(200).json(results.rows);
+        }
+    )
+}
 
 /*
 Querying Representative Data
@@ -32,7 +60,7 @@ const getAllRepNames = (request, response) => {
     pool.query(
         'SELECT rep_name, state, district, party, terms, congress FROM allreps ORDER BY congress ASC, state ASC, rep_name ASC', (error, results) => {
             if(error) {
-                console.log(error)
+                console.log("API ERROR: " + error)
             }
             response.status(200).json(results.rows);
         }
@@ -44,11 +72,26 @@ const getRepNamesByCongress = (request, response) => {
     const congress = parseInt(request.params.congress);
 
     pool.query(
-        'SELECT rep_name, state, district, party, terms FROM allreps WHERE congress = $1',
+        'SELECT rep_name, state, district, party, terms FROM allreps WHERE congress = $1 ORDER BY rep_name asc',
     [congress],
     (error, results) => {
         if(error) {
-            console.log(error)
+            console.log( "API ERROR: " + error)
+        }
+        response.status(200).json(results.rows);
+    })
+}
+
+const getRepNamesByCongressORDERBYstate = (request, response) => {
+
+    const congress = parseInt(request.params.congress);
+
+    pool.query(
+        'SELECT rep_name, state, district, party, terms FROM allreps WHERE congress = $1 ORDER BY state asc, district asc',
+    [congress],
+    (error, results) => {
+        if(error) {
+            console.log( "API ERROR: " + error)
         }
         response.status(200).json(results.rows);
     })
@@ -62,7 +105,7 @@ const getRepByState = (request, response) => {
         [congress, state],
         (error, results) => {
             if (error) {
-                console.log(error)
+                console.log("API ERROR: " + error)
             }
             response.status(200).json(results.rows);
         }
@@ -73,7 +116,16 @@ const getRepByCommittee = (request, response) => {
     const congress = parseInt(request.params.congress);
     const committee = request.params.committee;
 
-    pool.query() // query for rep by committee must be implemented (waiting on data)
+    pool.query(
+        `SELECT rep_name as representative, hc_name as committee FROM allhousecommitteeinfo WHERE congress=$1 AND hc_name LIKE ('%${committee}%')`, 
+        [congress],
+        (error, results) => {
+             if (error) {
+                 console.log("API ERROR: " + error)
+             }
+             response.status(200).json(results.rows);
+         }
+    ) // query for rep by committee must be implemented (waiting on data)
 }
 
 const queryBlumenauer = (request, response) => {
@@ -82,7 +134,7 @@ const queryBlumenauer = (request, response) => {
 
     pool.query('SELECT * FROM representative_116 WHERE rep_name = $1', [name], (error, results) => {
     if (error) {
-        console.log(error)
+        console.log("API ERROR: " + error)
     }
     response.status(200).json(results.rows);
 
@@ -101,7 +153,7 @@ const getSenatorNames = (request, response) => {
     [congress],
     (error, results) => {
         if(error) {
-            console.log(error)
+            console.log("API ERROR: " + error)
         }
         response.status(200).json(results.rows);
     })
@@ -115,7 +167,7 @@ const getSenatorByState = (request, response) => {
         [congress, state],
         (error, results) => {
             if (error) {
-                console.log(error)
+                console.log("API ERROR: " + error)
             }
             response.status(200).json(results.rows);
         }
@@ -141,7 +193,7 @@ const getHouseBillsByState = (request, response) => {
     [congress, state], 
     (error, result) => {
         if(error) {
-            console.log(error)
+            console.log("API ERROR: " + error)
         }
         response.status(200).json(result.rows);
     })
@@ -155,7 +207,7 @@ const getSenateBillsByState = (request, response) => {
     [congress, state], 
     (error, result) => {
         if(error) {
-            console.log(error)
+            console.log("API ERROR: " + error)
         }
         response.status(200).json(result.rows);
     })
@@ -169,7 +221,7 @@ const getHouseBillsByParty = (request, response) => {
     [congress, party], 
     (error, result) => {
         if(error) {
-            console.log(error)
+            console.log("API ERROR: " + error)
         }
         response.status(200).json(result.rows);
     })
@@ -183,7 +235,7 @@ const getSenateBillsByParty = (request, response) => {
     [congress, party], 
     (error, result) => {
         if(error) {
-            console.log(error)
+            console.log("API ERROR: " + error)
         }
         response.status(200).json(result.rows);
     })
@@ -192,6 +244,7 @@ const getSenateBillsByParty = (request, response) => {
 /*
 Querying Committee Data 
 */
+
 
 const getCommittees = (request, response) =>  {
     const congress = parseInt(request.params.congress);
@@ -211,10 +264,14 @@ const getSubcommittees = (request, resposne) =>  {
 
 module.exports = {
     connect,
+    getAllCongressPeople,
+    getAllCongressPeopleByCongress,
     getAllRepNames,
     queryBlumenauer,
     getRepNamesByCongress,
+    getRepNamesByCongressORDERBYstate,
     getRepByState,
+    getRepByCommittee,
     getSenatorNames,
     getSenatorByState,
     getHouseBillsByState,
