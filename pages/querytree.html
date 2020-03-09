@@ -7,7 +7,7 @@
     <link href="query.css" type="text/css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Audiowide&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <title>Query</title>
     <script src="../scripts/querytree.js"></script>
@@ -41,13 +41,13 @@
                 <input id="hidden-param" name="hiddenParam" value="" hidden>
                 <input id="hidden-detail-param" name="hiddenDetailParam" value="" hidden>
                 <ul id="tree">
-                    <li class="active" id="congress-person"><span class="node"><a class="item" onclick="setParam('congress-person')">Congress Person</a></span>
+                    <li class="treenode" id="congress-person"><span class="node"><a class="item" onclick="setParam('congress-person')">Congress Person</a></span>
                         <ul class="hidden">
-                            <li id="congress-person-116"><span class="node"><a class="item" onclick="setParam('congress-person-116')">116</a></span>
+                            <li class="treenode" id="congress-person-116"><span class="node"><a class="item" onclick="setParam('congress-person-116')">116</a></span>
                                 <ul class="hidden">
-                                    <li id="congress-person-116-house"><span class="node"><a class="item" onclick="setParam('congress-person-116-house')">House</a></span>
+                                    <li class="treenode" id="congress-person-116-house"><span class="node"><a class="item" onclick="setParam('congress-person-116-house')">House</a></span>
                                         <ul class="hidden">
-                                            <li id="congress-person-116-house-bystate"><span class="node"><a class="item" onclick="setParam('congress-person-116-house-bystate')">State</a></span>
+                                            <li class="treenode" id="congress-person-116-house-bystate"><span class="node"><a class="item" onclick="setParam('congress-person-116-house-bystate')">State</a></span>
                                                 <ul class="hidden">
                                                     <li>
                                                         <div class="form-group">
@@ -113,7 +113,7 @@
                                                     </li>
                                                 </ul>
                                             </li>
-                                            <li id="congress-person-116-house-bycommittee"><span class="node"><a class="item" onclick="setParam('congress-person-116-house-bycommittee')">Committee</a></span>
+                                            <li class="treenode" id="congress-person-116-house-bycommittee"><span class="node"><a class="item" onclick="setParam('congress-person-116-house-bycommittee')">Committee</a></span>
                                                 <ul class="hidden">
                                                     <li><div class="form-group">
                                                         <label for="committee1" class="col-sm-2 control-label">Committee</label>
@@ -146,9 +146,9 @@
                                             </li>
                                         </ul>
                                     </li>
-                                    <li id="congress-person-116-senate"><span class="node"><a class="item" onclick="setParam('congress-person-116-senate')">Senate</a></span>
+                                    <li class="treenode" id="congress-person-116-senate"><span class="node"><a class="item" onclick="setParam('congress-person-116-senate')">Senate</a></span>
                                         <ul class="hidden">
-                                            <li id="congress-person-116-senate-bystate"><span class="node"><a class="item" onclick="setParam('congress-person-116-senate-bystate')">State</a></span>
+                                            <li class="treenode" id="congress-person-116-senate-bystate"><span class="node"><a class="item" onclick="setParam('congress-person-116-senate-bystate')">State</a></span>
                                                 <ul class="hidden">
                                                     <li><div class="form-group">
                                                         <label for="state2" class="col-sm-2 control-label">State</label>
@@ -211,7 +211,7 @@
                                                     </div></li>
                                                 </ul>
                                             </li>
-                                            <li id="congress-person-116-senate-bycommittee"><span class="node"><a class="item" onclick="setParam('congress-person-116-senate-bycommittee')">Committee</a></span>
+                                            <li class="treenode" id="congress-person-116-senate-bycommittee"><span class="node"><a class="item" onclick="setParam('congress-person-116-senate-bycommittee')">Committee</a></span>
                                                 <ul class="hidden">
                                                     <li><div class="form-group">
                                                         <label for="committee2" class="col-sm-2 control-label">Committee</label>
@@ -242,11 +242,11 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li id="congress-person-115"><span class="node"><a class="item" onclick="setParam('congress-person-115')">115</a></span>
+                            <li class="treenode" id="congress-person-115"><span class="node"><a class="item" onclick="setParam('congress-person-115')">115</a></span>
                                 <ul class="hidden">
-                                    <li id="congress-person-115-house"><span class="node"><a class="item" onclick="setParam('congress-person-115-house')">House</a></span>
+                                    <li class="treenode" id="congress-person-115-house"><span class="node"><a class="item" onclick="setParam('congress-person-115-house')">House</a></span>
                                         <ul class="hidden">
-                                            <li id="congress-person-115-house-bystate"><span class="node"><a class="item" onclick="setParam('congress-person-115-bystate')">State</a></span>
+                                            <li class="treenode" id="congress-person-115-house-bystate"><span class="node"><a class="item" onclick="setParam('congress-person-115-bystate')">State</a></span>
                                                 <ul class="hidden">
                                                     <li><div class="form-group">
                                                         <label for="state3" class="col-sm-2 control-label">State</label>
@@ -309,7 +309,7 @@
                                                     </div></li>
                                                 </ul>
                                             </li>
-                                            <li id="congress-person-115-house-bycommittee"><span class="node"><a class="item" onclick="setParam('congress-person-115-house-bycommittee')">Committee</a></span>
+                                            <li class="treenode" id="congress-person-115-house-bycommittee"><span class="node"><a class="item" onclick="setParam('congress-person-115-house-bycommittee')">Committee</a></span>
                                                 <ul class="hidden">
                                                     <li><div class="form-group">
                                                         <label for="committee3" class="col-sm-2 control-label">Committee</label>
@@ -342,7 +342,7 @@
                                             </li>
                                         </ul>
                                     </li>
-                                    <li id="congress-person-115-senate"><span class="node"><a class="item" onclick="setParam('congress-person-115-senate')">Senate</a></span>
+                                    <li class="treenode" id="congress-person-115-senate"><span class="node"><a class="item" onclick="setParam('congress-person-115-senate')">Senate</a></span>
                                         <ul class="hidden">
                                             <li id="congress-person-115-senate-bystate"><span class="node"><a class="item" onclick="setParam('congress-person-115-senate-bystate')">State</a></span>
                                                 <ul class="hidden">
@@ -407,7 +407,7 @@
                                                     </div></li>
                                                 </ul>
                                             </li>
-                                            <li id="congress-person-115-senate-bystate"><span class="node"><a class="item" onclick="setParam('congress-person-115-senate-bycommittee')">Committee</a></span>
+                                            <li class="treenode" id="congress-person-115-senate-bystate"><span class="node"><a class="item" onclick="setParam('congress-person-115-senate-bycommittee')">Committee</a></span>
                                                 <ul class="hidden">
                                                     <li><div class="form-group">
                                                         <label for="committee4" class="col-sm-2 control-label">Committee</label>
@@ -440,11 +440,11 @@
                             </li>
                         </ul>
                     </li>
-                    <li id="committee"><span class="node"><a class="item" onclick="setParam('committee')">Committee</a></span>
+                    <li class="treenode" id="committee"><span class="node"><a class="item" onclick="setParam('committee')">Committee</a></span>
                         <ul class="hidden">
-                            <li id="committee-116"><span class="node"><a class="item" onclick="setParam('committee-116')">116</a></span>
+                            <li class="treenode" id="committee-116"><span class="node"><a class="item" onclick="setParam('committee-116')">116</a></span>
                                 <ul class="hidden">
-                                    <li id="committee-116-house"><span class="node"><a class="item" onclick="setParam('committee-116-house')">House</a></span>
+                                    <li class="treenode" id="committee-116-house"><span class="node"><a class="item" onclick="setParam('committee-116-house')">House</a></span>
                                         <ul class="hidden">
                                             <li><div class="form-group">
                                                 <label for="committee5" class="col-sm-2 control-label">Committee</label>
@@ -583,7 +583,7 @@
                                             </div></li>
                                         </ul>
                                     </li>
-                                    <li id="committee-116-senate"><span class="node"><a class="item" onclick="setParam('committee-116-senate')">Senate</a></span>
+                                    <li class="treenode" id="committee-116-senate"><span class="node"><a class="item" onclick="setParam('committee-116-senate')">Senate</a></span>
                                         <ul class="hidden">
                                             <li><div class="form-group">
                                                 <label for="committee6" class="col-sm-2 control-label">Committee</label>
@@ -696,9 +696,9 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li id="committee-115"><span class="node"><a class="item" onclick="setParam('committee-115')">115</a></span>
+                            <li class="treenode" id="committee-115"><span class="node"><a class="item" onclick="setParam('committee-115')">115</a></span>
                                 <ul class="hidden">
-                                    <li id="committee-115-house"><span class="node"><a class="item" onclick="setParam('committee-115-house')">House</a></span>
+                                    <li class="treenode" id="committee-115-house"><span class="node"><a class="item" onclick="setParam('committee-115-house')">House</a></span>
                                         <ul class="hidden">
                                             <li><div class="form-group">
                                                 <label for="committee7" class="col-sm-2 control-label">Committee</label>
@@ -837,7 +837,7 @@
                                             </div></li>
                                         </ul>
                                     </li>
-                                    <li id="committtee-115-senate"><span class="node"><a class="item" onclick="setParam('committee-115-senate')">Senate</a></span>
+                                    <li class="treenode" id="committtee-115-senate"><span class="node"><a class="item" onclick="setParam('committee-115-senate')">Senate</a></span>
                                         <ul class="hidden">
                                             <li>
                                                 <div class="form-group">
@@ -954,13 +954,13 @@
                             </li>
                         </ul>
                     </li>
-                    <li id="legislation"><span class="node"><a class="item" onclick="setParam('legislation')">Legislation</a></span>
+                    <li class="treenode" id="legislation"><span class="node"><a class="item" onclick="setParam('legislation')">Legislation</a></span>
                         <ul class="hidden">
-                            <li id="legislation-116"><span class="node"><a class="item" onclick="setParam('legislation-116')">116</a></span>
+                            <li class="treenode" id="legislation-116"><span class="node"><a class="item" onclick="setParam('legislation-116')">116</a></span>
                                 <ul class="hidden">
-                                    <li id="legislation-116-house"><span class="node"><a class="item" onclick="setParam('legislation-116-house')">House</a></span>
+                                    <li class="treenode" id="legislation-116-house"><span class="node"><a class="item" onclick="setParam('legislation-116-house')">House</a></span>
                                         <ul class="hidden">
-                                            <li id="legislation-116-house-bystate"><span class="node"><a class="item" onclick="setParam('legislation-116-house-bystate')">State</a></span>
+                                            <li class="treenode" id="legislation-116-house-bystate"><span class="node"><a class="item" onclick="setParam('legislation-116-house-bystate')">State</a></span>
                                                 <ul class="hidden">
                                                     <li><div class="form-group">
                                                         <label for="state" class="col-sm-2 control-label">State</label>
@@ -1023,7 +1023,7 @@
                                                     </div></li>
                                                 </ul>
                                             </li>
-                                            <li id="legislation-116-house-byparty"><span class="node"><a class="item" onclick="setParam('legislation-116-house-byparty')">Party</a></span>
+                                            <li class="treenode" id="legislation-116-house-byparty"><span class="node"><a class="item" onclick="setParam('legislation-116-house-byparty')">Party</a></span>
                                                 <ul class="hidden">
                                                     <li><a href="#" class="queryitem">R</a></li>
                                                     <li><a href="#" class="queryitem">D</a></li>
@@ -1032,15 +1032,15 @@
                                             </li>
                                         </ul>
                                     </li>
-                                    <li id="legislation-116-senate"><span class="node"><a class="item" onclick="setParam('legislation-116-senate')">Senate</a></span>
+                                    <li class="treenode" id="legislation-116-senate"><span class="node"><a class="item" onclick="setParam('legislation-116-senate')">Senate</a></span>
                                     </li>
                                 </ul>
                             </li>
-                            <li id="legislation-115"><span class="node"><a class="item" onclick="setParam('legislation-115')">115</a></span>
+                            <li class="treenode" id="legislation-115"><span class="node"><a class="item" onclick="setParam('legislation-115')">115</a></span>
                                 <ul class="hidden">
-                                    <li id="legislation-115-house"><span class="node"><a class="item" onclick="setParam('legislation-115-house')">House</a></span>
+                                    <li class="treenode" id="legislation-115-house"><span class="node"><a class="item" onclick="setParam('legislation-115-house')">House</a></span>
                                         <ul class="hidden">
-                                            <li id="legislation-115-house-bystate"><span class="node"><a class="item" onclick="setParam('legislation-115-house-bystate')">State</a></span>
+                                            <li class="treenode" id="legislation-115-house-bystate"><span class="node"><a class="item" onclick="setParam('legislation-115-house-bystate')">State</a></span>
                                                 <ul class="hidden">
                                                     <li><div class="form-group">
                                                         <label for="state" class="col-sm-2 control-label">State</label>
@@ -1103,7 +1103,7 @@
                                                     </div></li>
                                                 </ul>
                                             </li>
-                                            <li id="legislation-115-house-byparty"><span class="node"><a class="item" onclick="setParam('legislation-115-house-byparty')">Party</a></span>
+                                            <li class="treenode" id="legislation-115-house-byparty"><span class="node"><a class="item" onclick="setParam('legislation-115-house-byparty')">Party</a></span>
                                                 <ul class="hidden">
                                                     <li><a href="#" class="queryitem">R</a></li>
                                                     <li><a href="#" class="queryitem">D</a></li>
@@ -1112,7 +1112,7 @@
                                             </li>
                                         </ul>
                                     </li>
-                                    <li id="legislation-115-senate"><span class="node"><a class="item" onclick="setParam('legislation-115-senate')">Senate</a></span>
+                                    <li class="treenode" id="legislation-115-senate"><span class="node"><a class="item" onclick="setParam('legislation-115-senate')">Senate</a></span>
                                     </li>
                                 </ul>
                             </li>
