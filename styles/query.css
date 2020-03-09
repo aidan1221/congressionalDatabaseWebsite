@@ -3,18 +3,18 @@
   float: none;
   margin: 0 auto;
   margin-top: 100px;
+  margin-bottom: 100px;
 }
 
 #pageinfo {
   color: white;
 }
 
-#queryoptions {
-  margin-bottom: 50px;
-}
-
-#querylink {
+#queryoptions .card {
   margin-left: 100px;
+}
+#queryoptions .card-body{
+  text-align: center;
 }
 
 #treeimg {
