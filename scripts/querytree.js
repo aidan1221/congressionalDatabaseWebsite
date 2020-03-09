@@ -53,3 +53,11 @@ function setParam(id) {
 
   document.getElementById('hidden-param').value = id
 }
+
+function setDetailParam(id) {
+  let state = document.getElementById(id).value;
+
+  document.getElementById('hidden-detail-param').value = state;
+
+  console.log(state)
+}
