@@ -56,7 +56,7 @@ app.get('/api/representatives', db.getAllRepNames);
 
 app.get('/api/representatives/:congress', db.getRepNamesByCongress); // Get representative names by congress
 
-app.get('/api/representatives/:congress/orderbystate', db.getRepNamesByCongressORDERBYstate);
+app.get('/api/representatives/:congress/orderbystate/', db.getRepNamesByCongressORDERBYstate);
 
 app.get('/api/representatives/:congress/orderbycommittee', db.getRepNamesByCongressORDERBYcommittee);
 
@@ -68,6 +68,8 @@ app.get('/api/representatives/bycommittee/:congress/:committee', db.getRepByComm
 Endpoints for senator specific data
 */
 app.get('/api/senators/:congress', db.getSenatorNames);
+
+app.get('/api/senators/:congress/orderbystate/', db.getSenatorsByCongressORDERBYstate);
 
 app.get('/api/senators/:congress/:state', db.getSenatorByState);
 

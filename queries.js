@@ -164,7 +164,7 @@ const getSenatorNames = (request, response) => {
     const congress = parseInt(request.params.congress);
 
     pool.query(
-        'SELECT sen_name, state, party, terms FROM allsenators WHERE congress = $1',
+        'SELECT sen_name as senator, state, party, terms FROM allsenators WHERE congress = $1 ORDER BY senator asc',
     [congress],
     (error, results) => {
         if(error) {
@@ -174,11 +174,32 @@ const getSenatorNames = (request, response) => {
     })
 }
 
+const getSenatorsByCongressORDERBYstate = (request, response) => {
+
+    const congress = parseInt(request.params.congress);
+
+    pool.query(
+        'SELECT sen_name as senator, state, party, terms FROM allsenators WHERE congress=$1 ORDER BY state asc',
+    [congress],
+    (error, results) => {
+        if(error) {
+            console.log("API ERROR: " + error)
+        }
+        response.status(200).json(results.rows);
+    })
+}
+
+const getSenatorsByCongressORDERBYcommittee = (request, responnse) => {
+    const congress = parseInt(request.params.congress);
+
+    
+}
+
 const getSenatorByState = (request, response) => {
     const congress = parseInt(request.params.congress);
     const state = request.params.state;
     pool.query(
-        'SELECT sen_name, party, terms FROM allsenators WHERE congress=$1 AND state=$2',
+        'SELECT sen_name as senator, party, terms FROM allsenators WHERE congress=$1 AND state=$2 ORDER BY senator asc',
         [congress, state],
         (error, results) => {
             if (error) {
@@ -289,6 +310,7 @@ module.exports = {
     getRepByState,
     getRepByCommittee,
     getSenatorNames,
+    getSenatorsByCongressORDERBYstate,
     getSenatorByState,
     getHouseBillsByState,
     getSenateBillsByState,

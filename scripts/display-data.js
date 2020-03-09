@@ -52,8 +52,50 @@ async function queryData (queryParam) {
                 committee = detailParam.slice(0, detailParam.length - 1);
                 var url = BASE_URL + `/api/representatives/bycommittee/116/${committee}`;
             }
-            
             break;
+        case "congress-person-115-house-bycommittee":
+            if(detailParam === ""){
+                var url = BASE_URL + '/api/representatives/115/orderbycommittee';
+                break;
+            }
+            else {
+                committee = detailParam.slice(0, detailParam.length - 1);
+                var url = BASE_URL + `/api/representatives/bycommittee/115/${committee}`;
+            }
+            break;
+        case "congress-person-116-senate":
+            var url = BASE_URL + '/api/senators/116'
+            break;
+        case "congress-person-115-senate":
+            var url = BASE_URL + '/api/senators/115';
+            break;
+        case "congress-person-116-senate-bystate":
+            if(detailParam === ""){
+                var url = BASE_URL + '/api/senators/116/orderbystate';
+            }
+            else {
+                var url = BASE_URL + `/api/senators/116/${detailParam}`;
+            }
+            break;
+        case "congress-person-115-senate-bystate":
+            if(detailParam === ""){
+                var url = BASE_URL + '/api/senators/115/orderbystate';
+            }
+            else {
+                var url = BASE_URL + `/api/senators/115/${detailParam}`;
+            }
+            break;
+        case "congress-person-116-senate-bycommittee":
+            if(detailParam === ""){
+                var url = BASE_URL + '/api/senator/116/orderbycommittee';
+                break;
+            }
+            else {
+                committee = detailParam.slice(0, detailParam.length - 1);
+                var url = BASE_URL + `/api/senator/bycommittee/116/${committee}`;
+            }
+            break;
+
 
         // default:
         //     console.log("No good");
