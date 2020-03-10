@@ -280,7 +280,7 @@ const getSenateBillsByParty = (request, response) => {
 const getHouseBills = (request, response) => {
     const congress = request.params.congress;
     pool.query(
-        'SELECT * FROM allhousebillswithsponsorsdata WHERE congress=$1 ORDER BY state ASC, sponsor ASC LIMIT 5000', 
+        'SELECT * FROM allhousebillswithsponsorsdata WHERE congress=$1 ORDER BY state ASC, sponsor ASC', 
         [congress], (error, results) => {
             if (error) {
                 console.log("API ERROR: " + error);
@@ -293,7 +293,7 @@ const getHouseBills = (request, response) => {
 const getSenateBills = (request, response) => {
     const congress = request.params.congress;
     pool.query(
-        'SELECT * FROM allsenatebillswithsponsorsdata WHERE congress=$1 ORDER BY state ASC, sponsor ASC LIMIT 5000', 
+        'SELECT * FROM allsenatebillswithsponsorsdata WHERE congress=$1 ORDER BY state ASC, sponsor ASC', 
         [congress], (error, results) => {
             if (error) {
                 console.log("API ERROR: " + error);
@@ -301,6 +301,83 @@ const getSenateBills = (request, response) => {
             response.status(200).json(results.rows);
         }
     )
+}
+
+const getHouseBillsOrderByState = (request, response) => {
+    const congress = request.params.congress;
+    pool.query(
+        'SELECT * FROM allhousebillswithsponsorsdata WHERE congress=$1 ORDER BY state ASC, bill_name ASC', 
+        [congress], (error, results) => {
+            if (error) {
+                console.log("API ERROR: " + error);
+            }
+            response.status(200).json(results.rows);
+        }
+    )
+}
+
+const getSenateBillsOrderByState = (request, response) => {
+    const congress = request.params.congress;
+    pool.query(
+        'SELECT * FROM allsenatebillswithsponsorsdata WHERE congress=$1 ORDER BY state ASC, bill_name ASC', 
+        [congress], (error, results) => {
+            if (error) {
+                console.log("API ERROR: " + error);
+            }
+            response.status(200).json(results.rows);
+        }
+    )
+}
+
+const getHouseBillsOrderedByParty = (request, response) => {
+    const congress = request.params.congress;
+
+    pool.query('SELECT * FROM allhousebillswithsponsorsdata WHERE congress=$1 ORDER BY bill_name ASC, party ASC', 
+    [congress], 
+    (error, result) => {
+        if(error) {
+            console.log("API ERROR: " + error)
+        }
+        response.status(200).json(result.rows);
+    })
+}
+
+const getSenateBillsOrderedByParty = (request, response) => {
+    const congress = request.params.congress;
+
+    pool.query('SELECT * FROM allsenatebillswithsponsorsdata WHERE congress=$1 ORDER BY bill_name ASC, party ASC', 
+    [congress], 
+    (error, result) => {
+        if(error) {
+            console.log("API ERROR: " + error)
+        }
+        response.status(200).json(result.rows);
+    })
+}
+
+const getBills = (request, response) => {
+    
+    pool.query(
+        'SELECT bill_name, description, bill_status, bill_committees, sponsor, state, party, terms, congress FROM allhousebillswithsponsorsdata UNION SELECT * FROM allsenatebillswithsponsorsdata ORDER BY state ASC LIMIT 15000', (error, results) => {
+            if(error) {
+                console.log("API ERROR: " + error)
+            }
+            response.status(200).json(results.rows);
+        }
+    )
+}
+
+const getBillsByCongress = (request, response) => {
+    const congress = request.params.congress;
+
+    pool.query('SELECT bill_name, description, bill_status, bill_committees, sponsor, state, party, terms, congress FROM allhousebillswithsponsorsdata WHERE congress=$1 UNION SELECT * FROM allsenatebillswithsponsorsdata WHERE congress=$1 ORDER BY state ASC LIMIT 5000', 
+    [congress], 
+    (error, result) => {
+        if(error) {
+            console.log("API ERROR: " + error)
+        }
+        response.status(200).json(result.rows);
+    })
 }
 
 /*
@@ -400,4 +477,10 @@ module.exports = {
     getSubcommittees,
     getHouseBills,
     getSenateBills,
+    getHouseBillsOrderByState,
+    getSenateBillsOrderByState,
+    getHouseBillsOrderedByParty,
+    getSenateBillsOrderedByParty,
+    getBills,
+    getBillsByCongress,
 }
