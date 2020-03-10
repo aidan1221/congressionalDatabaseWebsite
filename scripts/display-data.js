@@ -119,54 +119,87 @@ async function queryData (queryParam) {
             break;
         case "legislation-115-house-bystate":
             if (detailParam === "") {
-                break;
+                var url = BASE_URL + '/api/housebills/115/orderbystate';
             }
             else {
                 var url = BASE_URL + `/api/housebillsbystate/115/${detailParam}`;
-            }  
+            }
+            break;
         case "legislation-115-house-byparty":
-            var url = BASE_URL + `/api/housebillsbyparty/115/${detailParam}`;
-            break; 
+            if (detailParam === "") {
+                var url = BASE_URL + '/api/housebills/115/orderbyparty';
+            }
+            else {
+                var url = BASE_URL + `/api/housebillsbyparty/115/${detailParam}`;
+            }
+            break;
         case "legislation-115-senate":
             var url = BASE_URL + '/api/senatebills/115';
             break;
         case "legislation-115-senate-bystate":
             if (detailParam === "") {
-                break;
+                var url = BASE_URL + '/api/senatebills/115/orderbystate';
             }
             else {
                 var url = BASE_URL + `/api/senatebillsbystate/115/${detailParam}`;
             }
+            break;
         case "legislation-115-senate-byparty":
-            var url = BASE_URL + `/api/senatebillsbyparty/115/${detailParam}`;
+            if (detailParam === "") {
+                var url = BASE_URL + '/api/senatebills/115/orderbyparty';
+            }
+            else {
+                var url = BASE_URL + `/api/senatebillsbyparty/115/${detailParam}`;
+            }
             break;
         case "legislation-116-house":
             var url = BASE_URL + '/api/housebills/116';
             break;
         case "legislation-116-house-bystate":
             if (detailParam === "") {
-                break;
+                var url = BASE_URL + '/api/housebills/116/orderbystate';
             }
             else {
                 var url = BASE_URL + `/api/housebillsbystate/116/${detailParam}`;
-            }   
+            }
+            break; 
         case "legislation-116-house-byparty":
-            var url = BASE_URL + `/api/housebillsbyparty/116/${detailParam}`;
+            if (detailParam === "") {
+                var url = BASE_URL + '/api/housebills/116/orderbyparty';
+            }
+            else {
+                var url = BASE_URL + `/api/housebillsbyparty/116/${detailParam}`;
+            }
             break;
         case "legislation-116-senate":
             var url = BASE_URL + '/api/senatebills/116';
             break;
         case "legislation-116-senate-bystate":
             if (detailParam === "") {
-                break;
+                var url = BASE_URL + '/api/senatebills/116/orderbystate';
             }
             else {
                 var url = BASE_URL + `/api/senatebillsbystate/116/${detailParam}`;
-            } 
-        case "legislation-116-senate-byparty":
-            var url = BASE_URL + `/api/senatebillsbyparty/116/${detailParam}`;
+            }
             break;
-    
+        case "legislation-116-senate-byparty":
+            if (detailParam === "") {
+                var url = BASE_URL + '/api/senatebills/116/orderbyparty';
+            }
+            else {
+                var url = BASE_URL + `/api/senatebillsbyparty/116/${detialParam}`;
+            }
+            break;
+        case "legislation":
+            var url = BASE_URL + '/api/legislations';
+            break;
+        case "legislation-116":
+            var url = BASE_URL + '/api/legislations/116';
+            break;
+        case "legislation-115":
+            var url = BASE_URL + '/api/legislations/115';
+            break;
+
         break;
 
         // default:

@@ -78,18 +78,27 @@ app.get('/api/senators/:congress/:state', db.getSenatorByState);
 Endpoints for House bill specific data
 */
 app.get('/api/housebills/:congress', db.getHouseBills);
+;
+app.get('/api/housebills/:congress/orderbystate', db.getHouseBillsOrderByState);
 
 app.get('/api/housebillsbystate/:congress/:state', db.getHouseBillsByState);
 
 app.get('/api/housebillsbyparty/:congress/:party', db.getHouseBillsByParty);
+
+app.get('/api/housebills/:congress/orderbyparty', db.getHouseBillsOrderedByParty);
 
 /* 
 Endpoints for Senate bill specific data
 */
 
 app.get('/api/senatebills/:congress', db.getSenateBills);
+app.get('/api/senatebills/:congress/orderbystate', db.getSenateBillsOrderByState);
 app.get('/api/senatebillsbystate/:congress/:state', db.getSenateBillsByState);
 app.get('/api/senatebillsbyparty/:congress/:party', db.getSenateBillsByParty);
+app.get('/api/senatebills/:congress/orderbyparty', db.getSenateBillsOrderedByParty);
+
+app.get('/api/legislations', db.getBills);
+app.get('/api/legislations/:congress', db.getBillsByCongress);
 
 /*
 Endpoints for Committee and Subcommittee oriented data
