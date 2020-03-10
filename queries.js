@@ -192,7 +192,7 @@ const getSenatorsByCongressORDERBYstate = (request, response) => {
 const getSenatorsByCongressORDERBYcommittee = (request, responnse) => {
     const congress = parseInt(request.params.congress);
 
-    
+
 }
 
 const getSenatorByState = (request, response) => {
@@ -289,12 +289,19 @@ const getCommittees = (request, response) =>  {
     pool.query() // query for all committee
 }
 
-const getSubcommittees = (request, resposne) =>  {
+const getSubcommittees = (request, response) =>  {
     const congress = parseInt(request.params.congress);
     const chamber = request.params.chamber;
     const committee = request.params.committee;
     
-    pool.query() // query for all committee
+    pool.query(
+        `SELECT * FROM allsubcommittees WHERE congress=$1 AND chamber=$2 AND committee LIKE ('%${committee}%')`, [congress,chamber], (error, results) => {
+            if(error) {
+                console.log("API ERROR: " + error);
+            }
+            response.status(200).json(results.rows);
+        }
+    )
 }
 
 
@@ -316,4 +323,5 @@ module.exports = {
     getSenateBillsByState,
     getHouseBillsByParty,
     getSenateBillsByParty,
+    getSubcommittees,
 }

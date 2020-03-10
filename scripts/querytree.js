@@ -59,9 +59,68 @@ function setParam(id) {
 }
 
 function setDetailParam(id) {
-  let state = document.getElementById(id).value;
+  let detail = document.getElementById(id).value;
 
-  document.getElementById('hidden-detail-param').value = state;
+  document.getElementById('hidden-detail-param').value = detail;
 
-  console.log(state)
+  console.log(detail)
+}
+
+function setExtraDetailParam(id) {
+  let detail = document.getElementById(id).value;
+
+  document.getElementById('hidden-extra-detail-param').value = detail;
+
+  console.log(detail)
+}
+
+const BASE_URL = 'http://localhost:5000';
+
+async function setCommittee(id) {
+  num = id.slice(id.length-1);
+  console.log(num);
+
+  var committeeName = document.getElementById(id).value;
+
+
+  var subcommitteeId = `subcommittee${num}`;
+  document.getElementById(subcommitteeId).innerHTML = '';
+  var emptyOption = document.createElement('option');
+
+  document.getElementById(subcommitteeId).appendChild(emptyOption);
+
+  switch (id) {
+    case "house-committee5":
+      console.log("HOUSE COMMITTEE 5");
+      var url = BASE_URL + `/api/getsubcommittees/116/House/${committeeName}`;
+      break;
+    case "senate-committee6":
+      var url = BASE_URL + `/api/getsubcommittees/116/Senate/${committeeName}`;
+      break;
+    case "house-committee7":
+      var url = BASE_URL + `/api/getsubcommittees/115/House/${committeeName}`;
+      break;
+    case "senate-committee8":
+      var url = BASE_URL + `/api/getsubcommittees/115/Senate/${committeeName}`;
+      break;
+
+  }
+
+
+  console.log("ENDPOINT: " + url)
+
+  const response = await fetch(url).then(response => response.json())
+  .then(json => {
+      var data = json;
+      return data;
+  }).then(data => {
+    console.log("HERE IS THE DATA: " + data[0]);
+    for (let i = 0; i < data.length; i++) {
+      let subcommitteeName = data[i]['subcommittee'];
+      let option = document.createElement('option');
+      option.setAttribute('id', subcommitteeName)
+      option.innerText = subcommitteeName;
+      document.getElementById(subcommitteeId).appendChild(option);
+    }
+  }).catch(error => console.log(`WOOPS ERROR: ${error.message}`))  
 }

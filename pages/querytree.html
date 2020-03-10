@@ -40,6 +40,7 @@
             <form action="/display-data.html?hiddenParam" class="form-group" method="GET">
                 <input id="hidden-param" name="hiddenParam" value="" hidden>
                 <input id="hidden-detail-param" name="hiddenDetailParam" value="" hidden>
+                <input id="hidden-extra-detail-param" name="hiddenExtraDetailParam" value="" hidden>
                 <ul id="tree">
                  
 <!-- congress person node -->
@@ -462,137 +463,34 @@
                                             <li><div class="form-group">
                                                 <label for="committee5" class="col-sm-2 control-label">Committee</label>
                                                 <div class="col-sm-5">
-                                                    <select class="form-control" name="committee5" id="committee5" form="decoy" onchange="setDetailParam('committee5')">
+                                                    <select class="form-control" name="committee5" id="house-committee5" form="decoy" onchange="setCommittee('house-committee5')">
                                                         <option value="" selected></option>
-                                                        <option value="Argiculture5">Argiculture</option>
-                                                        <option value="Appropriations5">Appropriations</option>
-                                                        <option value="Armed_Services5">Armed Services</option>
-                                                        <option value="Budget5">Budget</option>
-                                                        <option value="Education_and_Labor5">Education and Labor</option>
-                                                        <option value="Energy_and_Commerce5">Energy and Commerce</option>
-                                                        <option value="Ethics5">Ethics</option>
-                                                        <option value="Financial_Services5">Financial Services</option>
-                                                        <option value="Foreign_Affairs5">Foreign Affairs</option>
-                                                        <option value="Homeland_Security5">Homeland Security</option>
-                                                        <option value="House_Administration5">House Administration</option>
-                                                        <option value="Judiciary5">Judiciary</option>
-                                                        <option value="Natural_Resources5">Natural Resources</option>
-                                                        <option value="Oversight_and_Reform5">Oversight and Reform</option>
-                                                        <option value="Rules5">Rules</option>
-                                                        <option value="Science_Space_and_Technology5">Science, Space, and Technology</option>
-                                                        <option value="Small_Business5">Small Business</option>
-                                                        <option value="Transportation_and_Infrastructure5">Transportation and Infrastructure</option>
-                                                        <option value="Veterans_Affairs5">Veterans' Affairs</option>
-                                                        <option value="Ways_and_Means5">Ways and Means</option>
+                                                        <option value="Argiculture">Argiculture</option>
+                                                        <option value="Appropriations">Appropriations</option>
+                                                        <option value="Armed Services">Armed Services</option>
+                                                        <option value="Budget">Budget</option>
+                                                        <option value="Education and Labor">Education and Labor</option>
+                                                        <option value="Energy and Commerce">Energy and Commerce</option>
+                                                        <option value="Ethics">Ethics</option>
+                                                        <option value="Financial Services">Financial Services</option>
+                                                        <option value="Foreign Affairs">Foreign Affairs</option>
+                                                        <option value="Homeland Security">Homeland Security</option>
+                                                        <option value="House Administration">House Administration</option>
+                                                        <option value="Judiciary">Judiciary</option>
+                                                        <option value="Natural Resources">Natural Resources</option>
+                                                        <option value="Oversight and Reform">Oversight and Reform</option>
+                                                        <option value="Rules">Rules</option>
+                                                        <option value="Science Space and Technology">Science, Space, and Technology</option>
+                                                        <option value="Small Business">Small Business</option>
+                                                        <option value="Transportation and Infrastructure">Transportation and Infrastructure</option>
+                                                        <option value="Veterans Affairs">Veterans' Affairs</option>
+                                                        <option value="Ways and Means">Ways and Means</option>
                                                     </select>
                                                 </div>
                                                 <label for="subcommittee5" class="col-sm-2 control-label">Subcommittee</label>
                                                 <div class="col-sm-5">
-                                                    <select class="form-control" name="subcommittee5" id="subcommittee5" form="decoy" onchange="setDetailParam('subcommittee5')">
-                                                        <option value="" selected></option>
-                                                        <option value="Argiculture5">Biotechnology, Horticulture, and Research</option>
-                                                        <option value="Argiculture5">Commodity Exchanges, Energy, and Credit</option>
-                                                        <option value="Argiculture5">Conservation and Forestry</option>
-                                                        <option value="Argiculture5">General Farm Commodities and Risk Management</option>
-                                                        <option value="Argiculture5">Livestock and Foreign Agriculture</option>
-                                                        <option value="Argiculture5">Nutrition, Oversight, and Department Operations</option>
-                                                        <option value="Appropriations5">Agriculture, Rural Development, Food and Drug Administration, and Related Agencies</option>
-                                                        <option value="Appropriations5">Commerce, Justice, Science, and Related Agencies</option>
-                                                        <option value="Appropriations5">Defense</option>
-                                                        <option value="Appropriations5">Energy and Water Development, and Related Agencies</option>
-                                                        <option value="Appropriations5">Financial Services and General Government</option>
-                                                        <option value="Appropriations5">Homeland Security</option>
-                                                        <option value="Appropriations5">Interior, Environment, and Related Agencies</option>
-                                                        <option value="Appropriations5">Labor, Health and Human Services, Education, and Related Agencies</option>
-                                                        <option value="Appropriations5">Legislative Branch</option>
-                                                        <option value="Appropriations5">Military Construction, Veterans Affairs, and Related Agencies</option>
-                                                        <option value="Appropriations5">State, Foreign Operations, and Related Programs</option>
-                                                        <option value="Appropriations5">Transportation, and Housing and Urban Development, and Related Agencies</option>
-                                                        <option value="Armed_Services5">Intelligence and Emerging Threats and Capabilities</option>
-                                                        <option value="Armed_Services5">Military Personnel</option>
-                                                        <option value="Armed_Services5">Readiness</option>
-                                                        <option value="Armed_Services5">Seapower and Projection Forces</option>
-                                                        <option value="Armed_Services5">Strategic Forces</option>
-                                                        <option value="Armed_Services5">Tactical Air and Land Forces</option>
-                                                        <option value="Education_and_Labor5">Civil Rights and Human Services</option>
-                                                        <option value="Education_and_Labor5">Early Childhood, Elementary, and Secondary Education</option>
-                                                        <option value="Education_and_Labor5">Health, Employment, Labor, and Pensions</option>
-                                                        <option value="Education_and_Labor5">Higher Education and Workforce Investment</option>
-                                                        <option value="Education_and_Labor5">Workforce Protections</option>
-                                                        <option value="Energy_and_Commerce5">Communications and Technology</option>
-                                                        <option value="Energy_and_Commerce5">Consumer Protection and Commerce</option>
-                                                        <option value="Energy_and_Commerce5">Energy</option>
-                                                        <option value="Energy_and_Commerce5">Environment and Climate Change</option>
-                                                        <option value="Energy_and_Commerce5">Health</option>
-                                                        <option value="Energy_and_Commerce5">Oversight and Investigations</option>
-                                                        <option value="Financial_Services5">Consumer Protection and Financial Institutions</option>
-                                                        <option value="Financial_Services5">Diversity and Inclusion</option>
-                                                        <option value="Financial_Services5">Housing, Community Development, and Insurance</option>
-                                                        <option value="Financial_Services5">Investor Protection, Entrepreneurship, and Capital Markets</option>
-                                                        <option value="Financial_Services5">National Security, International Development, and Monetary Policy</option>
-                                                        <option value="Financial_Services5">Oversight and Investigations</option>
-                                                        <option value="Foreign_Affairs5">Africa, Global Health, Global Human Rights, and International Organizations</option>
-                                                        <option value="Foreign_Affairs5">Asia, the Pacific, and Nonproliferation</option>
-                                                        <option value="Foreign_Affairs5">Europe, Eurasia, Energy, and the Environment</option>
-                                                        <option value="Foreign_Affairs5">Middle East, North Africa, and International Terrorism</option>
-                                                        <option value="Foreign_Affairs5">Oversight and Investigations</option>
-                                                        <option value="Foreign_Affairs5">Western Hemisphere, Civilian Security, and Trade</option>
-                                                        <option value="Homeland_Security5">Border Security, Facilitation, and Operations</option>
-                                                        <option value="Homeland_Security5">Cybersecurity, Infrastructure Protection, and Innovation</option>
-                                                        <option value="Homeland_Security5">Emergency Preparedness, Response, and Recovery</option>
-                                                        <option value="Homeland_Security5">Intelligence and Counterterrorism</option>
-                                                        <option value="Homeland_Security5">Oversight, Management, and Accountability</option>
-                                                        <option value="Homeland_Security5">Transportation and Maritime Security</option>
-                                                        <option value="House_Administration5">Elections</option>
-                                                        <option value="Judiciary5">Antitrust, Commercial, and Administrative Law</option>
-                                                        <option value="Judiciary5">Courts, Intellectual Property, and the Internet</option>
-                                                        <option value="Judiciary5">Crime, Terrorism and Homeland Security</option>
-                                                        <option value="Judiciary5">Immigration and Citizenship</option>
-                                                        <option value="Judiciary5">The Constitution, Civil Rights, and Civil Liberties</option>
-                                                        <option value="Natural_Resources5">Energy and Mineral Resources</option>
-                                                        <option value="Natural_Resources5">Fisheries, Wildlife, Oceans and Insular Affairs</option>
-                                                        <option value="Natural_Resources5">For Indigenous Peoples of the United States</option>
-                                                        <option value="Natural_Resources5">National Parks, Forests, and Public Lands</option>
-                                                        <option value="Natural_Resources5">Oversight and Investigations</option>
-                                                        <option value="Natural_Resources5">Water, Oceans, and Wildlife</option>
-                                                        <option value="Oversight_and_Reform5">Civil Rights and Civil Liberties</option>
-                                                        <option value="Oversight_and_Reform5">Economic and Consumer Policy</option>
-                                                        <option value="Oversight_and_Reform5">Environment</option>
-                                                        <option value="Oversight_and_Reform5">Government Operations</option>
-                                                        <option value="Oversight_and_Reform5">Healthcare, Benefits, and Administrative Rules</option>
-                                                        <option value="Oversight_and_Reform5">Information Technology</option>
-                                                        <option value="Oversight_and_Reform5">Intergovernmental Affairs</option>
-                                                        <option value="Oversight_and_Reform5">National Security</option>
-                                                        <option value="Rules5">Expedited Procedures</option>
-                                                        <option value="Rules5">Legislative and Budget Process</option>
-                                                        <option value="Rules5">Rules and Organization of the House</option>
-                                                        <option value="Science_Space_and_Technology5">Energy</option>
-                                                        <option value="Science_Space_and_Technology5">Environment</option>
-                                                        <option value="Science_Space_and_Technology5">Investigations and Oversight</option>
-                                                        <option value="Science_Space_and_Technology5">Research and Technology</option>
-                                                        <option value="Science_Space_and_Technology5">Space and Aeronautics</option>
-                                                        <option value="Small_Business5">Contracting and Infrastructure</option>
-                                                        <option value="Small_Business5">Economic Growth, Tax and Capital Access</option>
-                                                        <option value="Small_Business5">Innovation and Workforce Development</option>
-                                                        <option value="Small_Business5">Investigations, Oversight and Regulations</option>
-                                                        <option value="Small_Business5">Rural Development, Agriculture, Trade and Entrepreneurship</option>
-                                                        <option value="Transportation_and_Infrastructure5">Aviation</option>
-                                                        <option value="Transportation_and_Infrastructure5">Coast Guard and Maritime Transportation</option>
-                                                        <option value="Transportation_and_Infrastructure5">Economic Development, Public Buildings, and Emergency Management</option>
-                                                        <option value="Transportation_and_Infrastructure5">Highways and Transit</option>
-                                                        <option value="Transportation_and_Infrastructure5">Railroads, Pipelines, and Hazardous Materials</option>
-                                                        <option value="Transportation_and_Infrastructure5">Water Resources and Environment</option>
-                                                        <option value="Veterans_Affairs5">Disability Assistance and Memorial Affairs</option>
-                                                        <option value="Veterans_Affairs5">Economic Opportunity</option>
-                                                        <option value="Veterans_Affairs5">Health</option>
-                                                        <option value="Veterans_Affairs5">Oversight and Investigations</option>
-                                                        <option value="Veterans_Affairs5">Technology Modernization</option>
-                                                        <option value="Ways_and_Means5">Health</option>
-                                                        <option value="Ways_and_Means5">Oversight</option>
-                                                        <option value="Ways_and_Means5">Select Revenue Measures</option>
-                                                        <option value="Ways_and_Means5">Social Security</option>
-                                                        <option value="Ways_and_Means5">Trade</option>
-                                                        <option value="Ways_and_Means5">Worker and Family Support</option>
+                                                    <select class="form-control" name="subcommittee5" id="subcommittee5" form="decoy" onchange="setExtraDetailParam('subcommittee5')">
+                                                        <!-- populated by setCommittee method -->
                                                     </select>
                                                 </div>
                                             </div></li>
@@ -603,108 +501,29 @@
                                             <li><div class="form-group">
                                                 <label for="committee6" class="col-sm-2 control-label">Committee</label>
                                                 <div class="col-sm-5">
-                                                    <select class="form-control" id="committee6" name="committee6" form="decoy">
-                                                        <option value="ANF6">Argiculture, Nutrition, and Forestry</option>
-                                                        <option value="APP6">Appropriations</option>
-                                                        <option value="ARS6">Armed Services</option>
-                                                        <option value="BHU6">Banking, Housing, and Urban Affairs</option>
-                                                        <option value="BUD6">Budget</option>
-                                                        <option value="CST6">Commerce, Science, and Transportation</option>
-                                                        <option value="ENR6">Energy and Natural Resources</option>
-                                                        <option value="EPW6">Environment and Public Works</option>
-                                                        <option value="FIN6">Finance</option>
-                                                        <option value="FOR6">Foreign Relations</option>
-                                                        <option value="HEL6">Health, Education, Labor, and Pensions</option>
-                                                        <option value="HSG6">Homeland Security and Governmental Affairs</option>
-                                                        <option value="JUD6">Judiciary</option>
-                                                        <option value="RUA6">Rules and Administration</option>
-                                                        <option value="SBE6">Small Business and Entrepreneurship</option>
-                                                        <option value="VEA6">Veterans' Affairs</option>
+                                                    <select class="form-control" id="senate-committee6" name="committee6" form="decoy" onchange="setCommittee('senate-committee6')">
+                                                        <option value="Argiculture, Nutrition, and Forestry">Argiculture, Nutrition, and Forestry</option>
+                                                        <option value="Appropriations">Appropriations</option>
+                                                        <option value="Armed Services">Armed Services</option>
+                                                        <option value="Banking, Housing, and Urban Affairs">Banking, Housing, and Urban Affairs</option>
+                                                        <option value="Budget">Budget</option>
+                                                        <option value="Commerce, Science, and Transportation">Commerce, Science, and Transportation</option>
+                                                        <option value="Energy and Natural Resources">Energy and Natural Resources</option>
+                                                        <option value="Environment and Public Works">Environment and Public Works</option>
+                                                        <option value="Finance">Finance</option>
+                                                        <option value="Foreign Relations">Foreign Relations</option>
+                                                        <option value="Health, Education, Labor, and Pensions">Health, Education, Labor, and Pensions</option>
+                                                        <option value="Homeland Security and Governmental Affairs">Homeland Security and Governmental Affairs</option>
+                                                        <option value="Judiciary">Judiciary</option>
+                                                        <option value="Rules and Administration">Rules and Administration</option>
+                                                        <option value="Small Business and Entrepreneurship">Small Business and Entrepreneurship</option>
+                                                        <option value="Veterans' Affairs">Veterans' Affairs</option>
                                                     </select>
                                                 </div>
                                                 <label for="subcommittee6" class="col-sm-2 control-label">Subcommittee</label>
                                                 <div class="col-sm-5">
-                                                    <select class="form-control" id="subcommittee6" name="subcommittee6" form="decoy" onchange="setDetailParam('subcommittee6')">
-                                                        <option value="" selected></option>
-                                                        <option value="ANF6">Commodities, Risk Management, and Trade</option>
-                                                        <option value="ANF6">Conservation, Forestry, and Natural Resources</option>
-                                                        <option value="ANF6">Livestock, Marketing, and Agriculture Security</option>
-                                                        <option value="ANF6">Nutrition, Agricultural Research, and Specialty Crops</option>
-                                                        <option value="ANF6">Rural Development and Energy</option>
-                                                        <option value="APP6">Agriculture, Rural Development, Food and Drug Administration, and Related Agencies</option>
-                                                        <option value="APP6">Commerce, Justice, Science, and Related Agencies</option>
-                                                        <option value="APP6">Department of Defense</option>
-                                                        <option value="APP6">Department of Homeland Security</option>
-                                                        <option value="APP6">Department of the Interior, Environment, and Related Agencies</option>
-                                                        <option value="APP6">Departments of Labor, Health and Human Services, and Education, and Related Agencies</option>
-                                                        <option value="APP6">Energy and Water Development</option>
-                                                        <option value="APP6">Financial Services and General Government</option>
-                                                        <option value="APP6">Legislative Branch</option>
-                                                        <option value="APP6">Military Construction and Veterans Affairs, and Related Agencies</option>
-                                                        <option value="APP6">State, Foreign Operations, and Related Programs</option>
-                                                        <option value="APP6">Transportation, Housing and Urban Development, and Related Agencies</option>
-                                                        <option value="ARS6">Airland</option>
-                                                        <option value="ARS6">Cybersecurity</option>
-                                                        <option value="ARS6">Emerging Threats and Capabilities</option>
-                                                        <option value="ARS6">Personnel</option>
-                                                        <option value="ARS6">Readiness and Management Support</option>
-                                                        <option value="ARS6">SeaPower</option>
-                                                        <option value="ARS6">Strategic Forces</option>
-                                                        <option value="BHU6">Economic Policy</option>
-                                                        <option value="BHU6">Financial Institutions and Consumer Protection</option>
-                                                        <option value="BHU6">Housing, Transportation, and Community Development</option>
-                                                        <option value="BHU6">National Security and International Trade and Finance</option>
-                                                        <option value="BHU6">Securities, Insurance, and Investment</option>
-                                                        <option value="CST6">Aviation and Space</option>
-                                                        <option value="CST6">Communications, Technology, Innovation, and the Internet</option>
-                                                        <option value="CST6">Manufacturing, Trade, and Consumer Protection</option>
-                                                        <option value="CST6">Science, Oceans, Fisheries, and Weather</option>
-                                                        <option value="CST6">Security</option>
-                                                        <option value="CST6">Tourism, Competitiveness, and Innovation</option>
-                                                        <option value="CST6">Transportation and Safety</option>
-                                                        <option value="ENR6">Energy</option>
-                                                        <option value="ENR6">National Parks</option>
-                                                        <option value="ENR6">Public Lands, Forests, and Mining</option>
-                                                        <option value="ENR6">Water and Power</option>
-                                                        <option value="EPW6">Clean Air and Nuclear Safety</option>
-                                                        <option value="EPW6">Fisheries, Water, and Wildlife</option>
-                                                        <option value="EPW6">Green Jobs and the New Economy</option>
-                                                        <option value="EPW6">Oversight</option>
-                                                        <option value="EPW6">Superfund, Waste Management, and Regulatory Oversight</option>
-                                                        <option value="EPW6">Transportation and Infrastructure</option>
-                                                        <option value="FIN6">Energy, Natural Resources, and Infrastructure</option>
-                                                        <option value="FIN6">Fiscal Responsibility and Economic Growth</option>
-                                                        <option value="FIN6">Health Care</option>
-                                                        <option value="FIN6">International Trade, Customs, and Global Competitiveness</option>
-                                                        <option value="FIN6">Social Security, Pensions, and Family Policy</option>
-                                                        <option value="FIN6">Taxation and IRS Oversight</option>
-                                                        <option value="FOR6">Africa and Global Health Policy</option>
-                                                        <option value="FOR6">East Asia, the Pacific, and International Cybersecurity Policy</option>
-                                                        <option value="FOR6">Europe and Regional Security Cooperation</option>
-                                                        <option value="FOR6">International Development and Foreign Assistance, Economic Affairs, International Environmental Protection, and Peace Corps</option>
-                                                        <option value="FOR6">International Operations and Organizations, Human Rights, Democracy, and Global Women's Issues</option>
-                                                        <option value="FOR6">Multilateral International Development, Multilateral Institutions, and International Economic, Energy, and Environmental Policy</option>
-                                                        <option value="FOR6">Near East, South Asia, Central Asia, and Counterterrorism</option>
-                                                        <option value="FOR6">State Department and USAID Management, International Operations, and Bilateral International Development</option>
-                                                        <option value="FOR6">Western Hemisphere, Transnational Crime, Civilian Security, Democracy, Human Rights, and Global Women's Issues</option>
-                                                        <option value="HEL6">Efficiency and Effectiveness of Federal Programs and the Federal Workforce</option>
-                                                        <option value="HEL6">Emergency Management, Intergovernmental Relations, and the District of Columbia</option>
-                                                        <option value="HEL6">Federal Spending Oversight and Emergency Management</option>
-                                                        <option value="HEL6">Financial and Contracting Oversight</option>
-                                                        <option value="HEL6">Permanent Subcommittee on Investigations</option>
-                                                        <option value="HEL6">Regulatory Affairs and Federal Management</option>
-                                                        <option value="HSG6">Efficiency and Effectiveness of Federal Programs and the Federal Workforce</option>
-                                                        <option value="HSG6">Emergency Management, Intergovernmental Relations, and the District of Columbia</option>
-                                                        <option value="HSG6">Federal Spending Oversight and Emergency Management</option>
-                                                        <option value="HSG6">Financial and Contracting Oversight</option>
-                                                        <option value="HSG6">Permanent Subcommittee on Investigations</option>
-                                                        <option value="HSG6">Regulatory Affairs and Federal Management</option>
-                                                        <option value="JUD6">Antitrust, Competition Policy and Consumer Rights</option>
-                                                        <option value="JUD6">Border Security and Immigration</option>
-                                                        <option value="JUD6">Constitution</option>
-                                                        <option value="JUD6">Crime and Terrorism</option>
-                                                        <option value="JUD6">Intellectual Property</option>
-                                                        <option value="JUD6">Oversight, Agency Action, Federal Rights and Federal Courts</option>
+                                                    <select class="form-control" id="subcommittee6" name="subcommittee6" form="decoy" onchange="setExtraDetailParam('subcommittee6')">
+                                                        <!-- populated by setCommittee method -->
                                                     </select>
                                                 </div>
                                             </div></li>
@@ -719,137 +538,34 @@
                                             <li><div class="form-group">
                                                 <label for="committee7" class="col-sm-2 control-label">Committee</label>
                                                 <div class="col-sm-5">
-                                                    <select class="form-control" name="committee7" id="committee7" form="decoy" onchange="setDetailParam('committee7')">
+                                                    <select class="form-control" name="committee7" id="house-committee7" form="decoy" onchange="setCommittee('house-committee7')">
                                                         <option value="" selected></option>
-                                                        <option value="Argiculture7">Argiculture</option>
-                                                        <option value="Appropriations7">Appropriations</option>
-                                                        <option value="Armed_Services7">Armed Services</option>
-                                                        <option value="Budget7">Budget</option>
-                                                        <option value="Education_and_Labor7">Education and Labor</option>
-                                                        <option value="Energy_and_Commerce7">Energy and Commerce</option>
-                                                        <option value="Ethics7">Ethics</option>
-                                                        <option value="Financial_Services7">Financial Services</option>
-                                                        <option value="Foreign_Affairs7">Foreign Affairs</option>
-                                                        <option value="Homeland_Security7">Homeland Security</option>
-                                                        <option value="House_Administration7">House Administration</option>
-                                                        <option value="Judiciary7">Judiciary</option>
-                                                        <option value="Natural_Resources7">Natural Resources</option>
-                                                        <option value="Oversight_and_Reform7">Oversight and Reform</option>
-                                                        <option value="Rules7">Rules</option>
-                                                        <option value="Science_Space_and_Technology7">Science, Space, and Technology</option>
-                                                        <option value="Small_Business7">Small Business</option>
-                                                        <option value="Transportation_and_Infrastructure7">Transportation and Infrastructure</option>
-                                                        <option value="Veterans_Affairs7">Veterans' Affairs</option>
-                                                        <option value="Ways_and_Means7">Ways and Means</option>
+                                                        <option value="Argiculture">Argiculture</option>
+                                                        <option value="Appropriations">Appropriations</option>
+                                                        <option value="Armed Services">Armed Services</option>
+                                                        <option value="Budget">Budget</option>
+                                                        <option value="Education and Labor">Education and Labor</option>
+                                                        <option value="Energy and Commerce">Energy and Commerce</option>
+                                                        <option value="Ethics">Ethics</option>
+                                                        <option value="Financial Services">Financial Services</option>
+                                                        <option value="Foreign Affairs">Foreign Affairs</option>
+                                                        <option value="Homeland Security">Homeland Security</option>
+                                                        <option value="House Administration">House Administration</option>
+                                                        <option value="Judiciary">Judiciary</option>
+                                                        <option value="Natural Resources">Natural Resources</option>
+                                                        <option value="Oversight and Reform">Oversight and Reform</option>
+                                                        <option value="Rules">Rules</option>
+                                                        <option value="Science Space and Technology">Science, Space, and Technology</option>
+                                                        <option value="Small Business">Small Business</option>
+                                                        <option value="Transportation and Infrastructure">Transportation and Infrastructure</option>
+                                                        <option value="Veterans Affairs">Veterans' Affairs</option>
+                                                        <option value="Ways and Means">Ways and Means</option>
                                                     </select>
                                                 </div>
                                                 <label for="subcommittee7" class="col-sm-2 control-label">Subcommittee</label>
                                                 <div class="col-sm-5">
-                                                    <select class="form-control" name="subcommittee7" id="subcommittee7" form="decoy" onchange="setDetailParam('subcommittee7')">
-                                                        <option value="" selected></option>
-                                                        <option value="Argiculture7">Biotechnology, Horticulture, and Research</option>
-                                                        <option value="Argiculture7">Commodity Exchanges, Energy, and Credit</option>
-                                                        <option value="Argiculture7">Conservation and Forestry</option>
-                                                        <option value="Argiculture7">General Farm Commodities and Risk Management</option>
-                                                        <option value="Argiculture7">Livestock and Foreign Agriculture</option>
-                                                        <option value="Argiculture7">Nutrition, Oversight, and Department Operations</option>
-                                                        <option value="Appropriations7">Agriculture, Rural Development, Food and Drug Administration, and Related Agencies</option>
-                                                        <option value="Appropriations7">Commerce, Justice, Science, and Related Agencies</option>
-                                                        <option value="Appropriations7">Defense</option>
-                                                        <option value="Appropriations7">Energy and Water Development, and Related Agencies</option>
-                                                        <option value="Appropriations7">Financial Services and General Government</option>
-                                                        <option value="Appropriations7">Homeland Security</option>
-                                                        <option value="Appropriations7">Interior, Environment, and Related Agencies</option>
-                                                        <option value="Appropriations7">Labor, Health and Human Services, Education, and Related Agencies</option>
-                                                        <option value="Appropriations7">Legislative Branch</option>
-                                                        <option value="Appropriations7">Military Construction, Veterans Affairs, and Related Agencies</option>
-                                                        <option value="Appropriations7">State, Foreign Operations, and Related Programs</option>
-                                                        <option value="Appropriations7">Transportation, and Housing and Urban Development, and Related Agencies</option>
-                                                        <option value="Armed_Services7">Intelligence and Emerging Threats and Capabilities</option>
-                                                        <option value="Armed_Services7">Military Personnel</option>
-                                                        <option value="Armed_Services7">Readiness</option>
-                                                        <option value="Armed_Services7">Seapower and Projection Forces</option>
-                                                        <option value="Armed_Services7">Strategic Forces</option>
-                                                        <option value="Armed_Services7">Tactical Air and Land Forces</option>
-                                                        <option value="Education_and_Labor7">Civil Rights and Human Services</option>
-                                                        <option value="Education_and_Labor7">Early Childhood, Elementary, and Secondary Education</option>
-                                                        <option value="Education_and_Labor7">Health, Employment, Labor, and Pensions</option>
-                                                        <option value="Education_and_Labor7">Higher Education and Workforce Investment</option>
-                                                        <option value="Education_and_Labor7">Workforce Protections</option>
-                                                        <option value="Energy_and_Commerce7">Communications and Technology</option>
-                                                        <option value="Energy_and_Commerce7">Consumer Protection and Commerce</option>
-                                                        <option value="Energy_and_Commerce7">Energy</option>
-                                                        <option value="Energy_and_Commerce7">Environment and Climate Change</option>
-                                                        <option value="Energy_and_Commerce7">Health</option>
-                                                        <option value="Energy_and_Commerce7">Oversight and Investigations</option>
-                                                        <option value="Financial_Services7">Consumer Protection and Financial Institutions</option>
-                                                        <option value="Financial_Services7">Diversity and Inclusion</option>
-                                                        <option value="Financial_Services7">Housing, Community Development, and Insurance</option>
-                                                        <option value="Financial_Services7">Investor Protection, Entrepreneurship, and Capital Markets</option>
-                                                        <option value="Financial_Services7">National Security, International Development, and Monetary Policy</option>
-                                                        <option value="Financial_Services7">Oversight and Investigations</option>
-                                                        <option value="Foreign_Affairs7">Africa, Global Health, Global Human Rights, and International Organizations</option>
-                                                        <option value="Foreign_Affairs7">Asia, the Pacific, and Nonproliferation</option>
-                                                        <option value="Foreign_Affairs7">Europe, Eurasia, Energy, and the Environment</option>
-                                                        <option value="Foreign_Affairs7">Middle East, North Africa, and International Terrorism</option>
-                                                        <option value="Foreign_Affairs7">Oversight and Investigations</option>
-                                                        <option value="Foreign_Affairs7">Western Hemisphere, Civilian Security, and Trade</option>
-                                                        <option value="Homeland_Security7">Border Security, Facilitation, and Operations</option>
-                                                        <option value="Homeland_Security7">Cybersecurity, Infrastructure Protection, and Innovation</option>
-                                                        <option value="Homeland_Security7">Emergency Preparedness, Response, and Recovery</option>
-                                                        <option value="Homeland_Security7">Intelligence and Counterterrorism</option>
-                                                        <option value="Homeland_Security7">Oversight, Management, and Accountability</option>
-                                                        <option value="Homeland_Security7">Transportation and Maritime Security</option>
-                                                        <option value="House_Administration7">Elections</option>
-                                                        <option value="Judiciary7">Antitrust, Commercial, and Administrative Law</option>
-                                                        <option value="Judiciary7">Courts, Intellectual Property, and the Internet</option>
-                                                        <option value="Judiciary7">Crime, Terrorism and Homeland Security</option>
-                                                        <option value="Judiciary7">Immigration and Citizenship</option>
-                                                        <option value="Judiciary7">The Constitution, Civil Rights, and Civil Liberties</option>
-                                                        <option value="Natural_Resources7">Energy and Mineral Resources</option>
-                                                        <option value="Natural_Resources7">Fisheries, Wildlife, Oceans and Insular Affairs</option>
-                                                        <option value="Natural_Resources7">For Indigenous Peoples of the United States</option>
-                                                        <option value="Natural_Resources7">National Parks, Forests, and Public Lands</option>
-                                                        <option value="Natural_Resources7">Oversight and Investigations</option>
-                                                        <option value="Natural_Resources7">Water, Oceans, and Wildlife</option>
-                                                        <option value="Oversight_and_Reform7">Civil Rights and Civil Liberties</option>
-                                                        <option value="Oversight_and_Reform7">Economic and Consumer Policy</option>
-                                                        <option value="Oversight_and_Reform7">Government Operations</option>
-                                                        <option value="Oversight_and_Reform7">Environment</option>
-                                                        <option value="Oversight_and_Reform7">Healthcare, Benefits, and Administrative Rules</option>
-                                                        <option value="Oversight_and_Reform7">Information Technology</option>
-                                                        <option value="Oversight_and_Reform7">Intergovernmental Affairs</option>
-                                                        <option value="Oversight_and_Reform7">National Security</option>
-                                                        <option value="Rules7">Expedited Procedures</option>
-                                                        <option value="Rules7">Legislative and Budget Process</option>
-                                                        <option value="Rules7">Rules and Organization of the House</option>
-                                                        <option value="Science_Space_and_Technology7">Energy</option>
-                                                        <option value="Science_Space_and_Technology7">Environment</option>
-                                                        <option value="Science_Space_and_Technology7">Investigations and Oversight</option>
-                                                        <option value="Science_Space_and_Technology7">Research and Technology</option>
-                                                        <option value="Science_Space_and_Technology7">Space and Aeronautics</option>
-                                                        <option value="Small_Business7">Contracting and Infrastructure</option>
-                                                        <option value="Small_Business7">Economic Growth, Tax and Capital Access</option>
-                                                        <option value="Small_Business7">Innovation and Workforce Development</option>
-                                                        <option value="Small_Business7">Investigations, Oversight and Regulations</option>
-                                                        <option value="Small_Business7">Rural Development, Agriculture, Trade and Entrepreneurship</option>
-                                                        <option value="Transportation_and_Infrastructure7">Aviation</option>
-                                                        <option value="Transportation_and_Infrastructure7">Coast Guard and Maritime Transportation</option>
-                                                        <option value="Transportation_and_Infrastructure7">Economic Development, Public Buildings, and Emergency Management</option>
-                                                        <option value="Transportation_and_Infrastructure7">Highways and Transit</option>
-                                                        <option value="Transportation_and_Infrastructure7">Railroads, Pipelines, and Hazardous Materials</option>
-                                                        <option value="Transportation_and_Infrastructure7">Water Resources and Environment</option>
-                                                        <option value="Veterans_Affairs7">Disability Assistance and Memorial Affairs</option>
-                                                        <option value="Veterans_Affairs7">Economic Opportunity</option>
-                                                        <option value="Veterans_Affairs7">Health</option>
-                                                        <option value="Veterans_Affairs7">Oversight and Investigations</option>
-                                                        <option value="Veterans_Affairs7">Technology Modernization</option>
-                                                        <option value="Ways_and_Means7">Health</option>
-                                                        <option value="Ways_and_Means7">Oversight</option>
-                                                        <option value="Ways_and_Means7">Select Revenue Measures</option>
-                                                        <option value="Ways_and_Means7">Social Security</option>
-                                                        <option value="Ways_and_Means7">Trade</option>
-                                                        <option value="Ways_and_Means7">Worker and Family Support</option>
+                                                    <select class="form-control" name="subcommittee7" id="subcommittee7" form="decoy" onchange="setExtraDetailParam('subcommittee7')">
+                                                        <!-- populated by setCommittee method -->
                                                     </select>
                                                 </div>
                                             </div></li>
@@ -861,109 +577,30 @@
                                                 <div class="form-group">
                                                 <label for="committee8" class="col-sm-2 control-label">Committee</label>
                                                     <div class="col-sm-5">
-                                                        <select class="form-control" id="committee8" name="committee8" form="decoy" onchange="setDetailParam('committee8')">
+                                                        <select class="form-control" id="senate-committee8" name="committee8" form="decoy" onchange="setCommittee('senate-committee8')">
                                                             <option value="" selected></option>
-                                                            <option value="ANF8">Argiculture, Nutrition, and Forestry</option>
-                                                            <option value="APP8">Appropriations</option>
-                                                            <option value="ARS8">Armed Services</option>
-                                                            <option value="BHU8">Banking, Housing, and Urban Affairs</option>
-                                                            <option value="BUD8">Budget</option>
-                                                            <option value="CST8">Commerce, Science, and Transportation</option>
-                                                            <option value="ENR8">Energy and Natural Resources</option>
-                                                            <option value="EPW8">Environment and Public Works</option>
-                                                            <option value="FIN8">Finance</option>
-                                                            <option value="FOR8">Foreign Relations</option>
-                                                            <option value="HEL8P">Health, Education, Labor, and Pensions</option>
-                                                            <option value="HSG8">Homeland Security and Governmental Affairs</option>
-                                                            <option value="JUD8">Judiciary</option>
-                                                            <option value="RUA8">Rules and Administration</option>
-                                                            <option value="SBE8">Small Business and Entrepreneurship</option>
-                                                            <option value="VEA8">Veterans' Affairs</option>
+                                                            <option value="Argiculture, Nutrition, and Forestry">Argiculture, Nutrition, and Forestry</option>
+                                                            <option value="Appropriations">Appropriations</option>
+                                                            <option value="Armed Services">Armed Services</option>
+                                                            <option value="Banking, Housing, and Urban Affairs">Banking, Housing, and Urban Affairs</option>
+                                                            <option value="Budget">Budget</option>
+                                                            <option value="Commerce, Science, and Transportation">Commerce, Science, and Transportation</option>
+                                                            <option value="Energy and Natural Resources">Energy and Natural Resources</option>
+                                                            <option value="Environment and Public Works">Environment and Public Works</option>
+                                                            <option value="Finance">Finance</option>
+                                                            <option value="Foreign Relations">Foreign Relations</option>
+                                                            <option value="Health, Education, Labor, and Pensions">Health, Education, Labor, and Pensions</option>
+                                                            <option value="Homeland Security and Governmental Affairs">Homeland Security and Governmental Affairs</option>
+                                                            <option value="Judiciary">Judiciary</option>
+                                                            <option value="Rules and Administration">Rules and Administration</option>
+                                                            <option value="Small Business and Entrepreneurship">Small Business and Entrepreneurship</option>
+                                                            <option value="Veterans' Affairs">Veterans' Affairs</option>
                                                         </select>
                                                     </div>
                                                     <label for="subcommittee8" class="col-sm-2 control-label">Subcommittee</label>
                                                     <div class="col-sm-5">
-                                                        <select class="form-control" id="subcommittee8" name="subcommittee8" form="decoy" onchange="setDetailParam('subcommittee8')">
-                                                            <option value="" selected></option>
-                                                            <option value="ANF8">Commodities, Risk Management, and Trade</option>
-                                                            <option value="ANF8">Conservation, Forestry, and Natural Resources</option>
-                                                            <option value="ANF8">Livestock, Marketing, and Agriculture Security</option>
-                                                            <option value="ANF8">Nutrition, Agricultural Research, and Specialty Crops</option>
-                                                            <option value="ANF8">Rural Development and Energy</option>
-                                                            <option value="APP8">Agriculture, Rural Development, Food and Drug Administration, and Related Agencies</option>
-                                                            <option value="APP8">Commerce, Justice, Science, and Related Agencies</option>
-                                                            <option value="APP8">Department of Defense</option>
-                                                            <option value="APP8">Department of Homeland Security</option>
-                                                            <option value="APP8">Department of the Interior, Environment, and Related Agencies</option>
-                                                            <option value="APP8">Departments of Labor, Health and Human Services, and Education, and Related Agencies</option>
-                                                            <option value="APP8">Energy and Water Development</option>
-                                                            <option value="APP8">Financial Services and General Government</option>
-                                                            <option value="APP8">Legislative Branch</option>
-                                                            <option value="APP8">Military Construction and Veterans Affairs, and Related Agencies</option>
-                                                            <option value="APP8">State, Foreign Operations, and Related Programs</option>
-                                                            <option value="APP8">Transportation, Housing and Urban Development, and Related Agencies</option>
-                                                            <option value="ARS8">Airland</option>
-                                                            <option value="ARS8">Cybersecurity</option>
-                                                            <option value="ARS8">Emerging Threats and Capabilities</option>
-                                                            <option value="ARS8">Personnel</option>
-                                                            <option value="ARS8">Readiness and Management Support</option>
-                                                            <option value="ARS8">SeaPower</option>
-                                                            <option value="ARS8">Strategic Forces</option>
-                                                            <option value="BHU8">Economic Policy</option>
-                                                            <option value="BHU8">Financial Institutions and Consumer Protection</option>
-                                                            <option value="BHU8">Housing, Transportation, and Community Development</option>
-                                                            <option value="BHU8">National Security and International Trade and Finance</option>
-                                                            <option value="BHU8">Securities, Insurance, and Investment</option>
-                                                            <option value="CST8">Aviation and Space</option>
-                                                            <option value="CST8">Communications, Technology, Innovation, and the Internet</option>
-                                                            <option value="CST8">Manufacturing, Trade, and Consumer Protection</option>
-                                                            <option value="CST8">Science, Oceans, Fisheries, and Weather</option>
-                                                            <option value="CST8">Security</option>
-                                                            <option value="CST8">Tourism, Competitiveness, and Innovation</option>
-                                                            <option value="CST8">Transportation and Safety</option>
-                                                            <option value="ENR8">Energy</option>
-                                                            <option value="ENR8">National Parks</option>
-                                                            <option value="ENR8">Public Lands, Forests, and Mining</option>
-                                                            <option value="ENR8">Water and Power</option>
-                                                            <option value="EPW8">Clean Air and Nuclear Safety</option>
-                                                            <option value="EPW8">Fisheries, Water, and Wildlife</option>
-                                                            <option value="EPW8">Green Jobs and the New Economy</option>
-                                                            <option value="EPW8">Oversight</option>
-                                                            <option value="EPW8">Superfund, Waste Management, and Regulatory Oversight</option>
-                                                            <option value="EPW8">Transportation and Infrastructure</option>
-                                                            <option value="FIN8">Energy, Natural Resources, and Infrastructure</option>
-                                                            <option value="FIN8">Fiscal Responsibility and Economic Growth</option>
-                                                            <option value="FIN8">Health Care</option>
-                                                            <option value="FIN8">International Trade, Customs, and Global Competitiveness</option>
-                                                            <option value="FIN8">Social Security, Pensions, and Family Policy</option>
-                                                            <option value="FIN8">Taxation and IRS Oversight</option>
-                                                            <option value="FOR8">Africa and Global Health Policy</option>
-                                                            <option value="FOR8">East Asia, the Pacific, and International Cybersecurity Policy</option>
-                                                            <option value="FOR8">Europe and Regional Security Cooperation</option>
-                                                            <option value="FOR8">International Development and Foreign Assistance, Economic Affairs, International Environmental Protection, and Peace Corps</option>
-                                                            <option value="FOR8">International Operations and Organizations, Human Rights, Democracy, and Global Women's Issues</option>
-                                                            <option value="FOR8">Multilateral International Development, Multilateral Institutions, and International Economic, Energy, and Environmental Policy</option>
-                                                            <option value="FOR8">Near East, South Asia, Central Asia, and Counterterrorism</option>
-                                                            <option value="FOR8">State Department and USAID Management, International Operations, and Bilateral International Development</option>
-                                                            <option value="FOR8">Western Hemisphere, Transnational Crime, Civilian Security, Democracy, Human Rights, and Global Women's Issues</option>
-                                                            <option value="HEL8">Efficiency and Effectiveness of Federal Programs and the Federal Workforce</option>
-                                                            <option value="HEL8">Emergency Management, Intergovernmental Relations, and the District of Columbia</option>
-                                                            <option value="HEL8">Federal Spending Oversight and Emergency Management</option>
-                                                            <option value="HEL8">Financial and Contracting Oversight</option>
-                                                            <option value="HEL8">Permanent Subcommittee on Investigations</option>
-                                                            <option value="HEL8">Regulatory Affairs and Federal Management</option>
-                                                            <option value="HSG8">Efficiency and Effectiveness of Federal Programs and the Federal Workforce</option>
-                                                            <option value="HSG8">Emergency Management, Intergovernmental Relations, and the District of Columbia</option>
-                                                            <option value="HSG8">Federal Spending Oversight and Emergency Management</option>
-                                                            <option value="HSG8">Financial and Contracting Oversight</option>
-                                                            <option value="HSG8">Permanent Subcommittee on Investigations</option>
-                                                            <option value="HSG8">Regulatory Affairs and Federal Management</option>
-                                                            <option value="JUD8">Antitrust, Competition Policy and Consumer Rights</option>
-                                                            <option value="JUD8">Border Security and Immigration</option>
-                                                            <option value="JUD8">Constitution</option>
-                                                            <option value="JUD8">Crime and Terrorism</option>
-                                                            <option value="JUD8">Intellectual Property</option>
-                                                            <option value="JUD8">Oversight, Agency Action, Federal Rights and Federal Courts</option>
+                                                        <select class="form-control" id="subcommittee8" name="subcommittee8" form="decoy" onchange="setExtraDetailParam('subcommittee8')">
+                                                            <!-- populated by setCommittee method -->
                                                         </select>
                                                     </div>
                                                 </div>

@@ -88,8 +88,15 @@ Endpoints for Senate bill specific data
 app.get('/api/senatebillsbystate/:congress/:state', db.getSenateBillsByState);
 app.get('/api/senatebillsbyparty/:congress/:party', db.getHouseBillsByParty);
 
+/*
+Endpoints for Committee and Subcommittee oriented data
+*/
+
+app.get('/api/getsubcommittees/:congress/:chamber/:committee', db.getSubcommittees);
 
 app.listen(port, () => {
     console.log(`App running on port ${port}`)
 });
+
+
 
