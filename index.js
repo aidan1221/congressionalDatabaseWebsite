@@ -114,6 +114,8 @@ Endpoints for Committee and Subcommittee oriented data
 
 app.get('/api/getsubcommittees/:congress/:chamber/:committee', db.getSubcommittees);
 
+app.get('/api/committees/:congress', db.getAllCommitteesAndSubCommitteesByCongress);
+
 app.get('/api/committees/:congress/:chamber', db.getAllCommitteesAndSubCommitteesByChamberAndCongress);
 
 app.get('/api/committees/:congress/:chamber/:committee', db.getCommitteeDataByChamberAndCongress);
