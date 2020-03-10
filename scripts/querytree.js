@@ -5,6 +5,8 @@ $(document).ready(function () {
         $(this).parent().find('.node').removeClass('active');
         $(this).parent().siblings().find('.active').removeClass('active');
         $(this).addClass('active');
+        $(this).parent().find("option:eq(0)").prop('selected', true);
+        $(this).parent().siblings().find("option:eq(0)").prop('selected', true);
     });
 
     $("#committee5").change(function() {

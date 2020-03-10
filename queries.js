@@ -277,6 +277,32 @@ const getSenateBillsByParty = (request, response) => {
     })
 }
 
+const getHouseBills = (request, response) => {
+    const congress = request.params.congress;
+    pool.query(
+        'SELECT * FROM allhousebillswithsponsorsdata WHERE congress=$1 ORDER BY state ASC, sponsor ASC LIMIT 5000', 
+        [congress], (error, results) => {
+            if (error) {
+                console.log("API ERROR: " + error);
+            }
+            response.status(200).json(results.rows);
+        }
+    )
+}
+
+const getSenateBills = (request, response) => {
+    const congress = request.params.congress;
+    pool.query(
+        'SELECT * FROM allsenatebillswithsponsorsdata WHERE congress=$1 ORDER BY state ASC, sponsor ASC LIMIT 5000', 
+        [congress], (error, results) => {
+            if (error) {
+                console.log("API ERROR: " + error);
+            }
+            response.status(200).json(results.rows);
+        }
+    )
+}
+
 /*
 Querying Committee Data 
 */
@@ -372,4 +398,6 @@ module.exports = {
     getCommitteeDataByChamberAndCongress,
     getSubcommitteeDataByCommittee,
     getSubcommittees,
+    getHouseBills,
+    getSenateBills,
 }
