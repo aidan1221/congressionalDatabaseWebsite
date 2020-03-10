@@ -50,7 +50,7 @@ async function queryData (queryParam) {
                 break;
             }
             else {
-                committee = detailParam.slice(0, detailParam.length - 1);
+                committee = detailParam;
                 var url = BASE_URL + `/api/representatives/bycommittee/116/${committee}`;
             }
             break;
@@ -60,7 +60,7 @@ async function queryData (queryParam) {
                 break;
             }
             else {
-                committee = detailParam.slice(0, detailParam.length - 1);
+                committee = detailParam;
                 var url = BASE_URL + `/api/representatives/bycommittee/115/${committee}`;
             }
             break;
@@ -105,6 +105,12 @@ async function queryData (queryParam) {
                 committee = detailParam;
                 var url = BASE_URL + `/api/senators/bycommittee/115/${committee}`;
             }
+            break;
+        case "committee-116":
+            var url = BASE_URL + '/api/committees/116'
+            break;
+        case "committee-115":
+            var url = BASE_URL + '/api/committees/115'
             break;
         case "committee-116-house":
             var url = BASE_URL + '/api/committees/116/House';

@@ -401,7 +401,21 @@ const getBillsByCongress = (request, response) => {
 Querying Committee Data 
 */
 
-
+const getAllCommitteesAndSubCommitteesByCongress = (request, response) =>  {
+    const congress = parseInt(request.params.congress);
+    const chamber = request.params.chamber;
+    
+    pool.query(
+        'SELECT * FROM allcommitteeinfo WHERE congress=$1 ORDER BY committee asc, subcommittee asc, congressperson asc',
+        [congress],
+        (error, results) => {
+            if(error) {
+                console.log("API ERROR: " + error);
+            }
+            response.status(200).json(results.rows);
+        }
+    ) // query for all committee
+}
 
 const getAllCommitteesAndSubCommitteesByChamberAndCongress = (request, response) =>  {
     const congress = parseInt(request.params.congress);
@@ -451,6 +465,7 @@ const getCommitteeDataByChamberAndCongress = (request, response) =>  {
     ) 
 }
 
+
 const getSubcommitteeDataByCommittee = (request, response) =>  {
     const congress = parseInt(request.params.congress);
     const chamber = request.params.chamber;
@@ -491,6 +506,7 @@ module.exports = {
     getHouseBillsByParty,
     getSenateBillsByParty,
     getAllCommitteesAndSubCommitteesByChamberAndCongress,
+    getAllCommitteesAndSubCommitteesByCongress,
     getCommitteeDataByChamberAndCongress,
     getSubcommitteeDataByCommittee,
     getSubcommittees,
