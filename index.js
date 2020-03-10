@@ -97,6 +97,10 @@ app.get('/api/senatebillsbystate/:congress/:state', db.getSenateBillsByState);
 app.get('/api/senatebillsbyparty/:congress/:party', db.getSenateBillsByParty);
 app.get('/api/senatebills/:congress/orderbyparty', db.getSenateBillsOrderedByParty);
 
+/*
+Endpoints for bills
+*/
+
 app.get('/api/legislations', db.getBills);
 app.get('/api/legislations/:congress', db.getBillsByCongress);
 
