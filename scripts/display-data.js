@@ -51,8 +51,60 @@ async function queryData (queryParam) {
                 committee = detailParam.slice(0, detailParam.length - 1);
                 var url = BASE_URL + `/api/representatives/bycommittee/116/${committee}`;
             }
-            
+        case "legislation-115-house":
+            var url = BASE_URL + '/api/housebills/115';
             break;
+        case "legislation-115-house-bystate":
+            if (detailParam === "") {
+                break;
+            }
+            else {
+                var url = BASE_URL + `/api/housebillsbystate/115/${detailParam}`;
+            }  
+        case "legislation-115-house-byparty":
+            var url = BASE_URL + `/api/housebillsbyparty/115/${detailParam}`;
+            break; 
+        case "legislation-115-senate":
+            var url = BASE_URL + '/api/senatebills/115';
+            break;
+        case "legislation-115-senate-bystate":
+            if (detailParam === "") {
+                break;
+            }
+            else {
+                var url = BASE_URL + `/api/senatebillsbystate/115/${detailParam}`;
+            }
+        case "legislation-115-senate-byparty":
+            var url = BASE_URL + `/api/senatebillsbyparty/115/${detailParam}`;
+            break;
+        case "legislation-116-house":
+            var url = BASE_URL + '/api/housebills/116';
+            break;
+        case "legislation-116-house-bystate":
+            if (detailParam === "") {
+                break;
+            }
+            else {
+                var url = BASE_URL + `/api/housebillsbystate/116/${detailParam}`;
+            }   
+        case "legislation-116-house-byparty":
+            var url = BASE_URL + `/api/housebillsbyparty/116/${detailParam}`;
+            break;
+        case "legislation-116-senate":
+            var url = BASE_URL + '/api/senatebills/116';
+            break;
+        case "legislation-116-senate-bystate":
+            if (detailParam === "") {
+                break;
+            }
+            else {
+                var url = BASE_URL + `/api/senatebillsbystate/116/${detailParam}`;
+            } 
+        case "legislation-116-senate-byparty":
+            var url = BASE_URL + `/api/senatebillsbyparty/116/${detailParam}`;
+            break;
+    
+        break;
 
         // default:
         //     console.log("No good");
