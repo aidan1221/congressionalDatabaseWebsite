@@ -306,7 +306,7 @@ const getSenateBills = (request, response) => {
 const getHouseBillsOrderByState = (request, response) => {
     const congress = request.params.congress;
     pool.query(
-        'SELECT * FROM allhousebillswithsponsorsdata WHERE congress=$1 ORDER BY state ASC, sponsor ASC LIMIT 1000', 
+        'SELECT * FROM allhousebillswithsponsorsdata WHERE congress=$1 ORDER BY state ASC, bill_name ASC LIMIT 1000', 
         [congress], (error, results) => {
             if (error) {
                 console.log("API ERROR: " + error);
@@ -319,7 +319,7 @@ const getHouseBillsOrderByState = (request, response) => {
 const getSenateBillsOrderByState = (request, response) => {
     const congress = request.params.congress;
     pool.query(
-        'SELECT * FROM allsenatebillswithsponsorsdata WHERE congress=$1 ORDER BY state ASC, sponsor ASC LIMIT 1000', 
+        'SELECT * FROM allsenatebillswithsponsorsdata WHERE congress=$1 ORDER BY state ASC, bill_name ASC LIMIT 1000', 
         [congress], (error, results) => {
             if (error) {
                 console.log("API ERROR: " + error);
@@ -332,7 +332,7 @@ const getSenateBillsOrderByState = (request, response) => {
 const getHouseBillsOrderedByParty = (request, response) => {
     const congress = request.params.congress;
 
-    pool.query('SELECT * FROM allhousebillswithsponsorsdata WHERE congress=$1 ORDER BY state ASC, party ASC LIMIT 1000', 
+    pool.query('SELECT * FROM allhousebillswithsponsorsdata WHERE congress=$1 ORDER BY bill_name ASC, party ASC LIMIT 1000', 
     [congress], 
     (error, result) => {
         if(error) {
@@ -345,7 +345,7 @@ const getHouseBillsOrderedByParty = (request, response) => {
 const getSenateBillsOrderedByParty = (request, response) => {
     const congress = request.params.congress;
 
-    pool.query('SELECT * FROM allsenatebillswithsponsorsdata WHERE congress=$1 ORDER BY state ASC, party ASC LIMIT 1000', 
+    pool.query('SELECT * FROM allsenatebillswithsponsorsdata WHERE congress=$1 ORDER BY bill_name ASC, party ASC LIMIT 1000', 
     [congress], 
     (error, result) => {
         if(error) {
@@ -358,7 +358,7 @@ const getSenateBillsOrderedByParty = (request, response) => {
 const getBills = (request, response) => {
     
     pool.query(
-        'SELECT * FROM allhousebillswithsponsorsdata ORDER BY state ASC, congress ASC LIMIT 1000', (error, results) => {
+        'SELECT * FROM allsenatebillswithsponsorsdata ORDER BY congress ASC LIMIT 1000', (error, results) => {
             if(error) {
                 console.log("API ERROR: " + error)
             }
