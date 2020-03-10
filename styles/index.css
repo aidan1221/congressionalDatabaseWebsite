@@ -11,6 +11,7 @@
     top: 90px;
     left: 120px;
     position: absolute;
+    white-space: nowrap;
     text-shadow: 2px 2px rgb(2, 16, 95);
   }
   
@@ -39,7 +40,7 @@
 
       #maintext h2{
         font-size: 6vw;
-        padding-right: 40%;
+        padding-right: 30%;
         margin: 0;
       }
   }
@@ -54,7 +55,7 @@
     }
 
     #maintext {
-        width: 80%;
+        width: 100%;
         padding: 0;
         top: 90px;
         left: 10px;
@@ -79,7 +80,7 @@
     }
 
     #maintext {
-        width: 80%;
+        width: 100%;
         top: 90px;
         left: 120px;
         position: absolute;
