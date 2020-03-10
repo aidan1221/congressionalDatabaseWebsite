@@ -71,7 +71,11 @@ app.get('/api/senators/:congress', db.getSenatorNames);
 
 app.get('/api/senators/:congress/orderbystate/', db.getSenatorsByCongressORDERBYstate);
 
+app.get('/api/senators/:congress/orderbycommittee/', db.getSenatorsByCongressORDERBYcommittee);
+
 app.get('/api/senators/:congress/:state', db.getSenatorByState);
+
+app.get('/api/senators/bycommittee/:congress/:committee', db.getSenatorsByCommittee);
 
 
 /*

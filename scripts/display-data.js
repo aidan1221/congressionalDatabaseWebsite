@@ -88,12 +88,22 @@ async function queryData (queryParam) {
             break;
         case "congress-person-116-senate-bycommittee":
             if(detailParam === ""){
-                var url = BASE_URL + '/api/senator/116/orderbycommittee';
+                var url = BASE_URL + '/api/senators/116/orderbycommittee';
                 break;
             }
             else {
-                committee = detailParam.slice(0, detailParam.length - 1);
-                var url = BASE_URL + `/api/senator/bycommittee/116/${committee}`;
+                committee = detailParam;
+                var url = BASE_URL + `/api/senators/bycommittee/116/${committee}`;
+            }
+            break;
+        case "congress-person-115-senate-bycommittee":
+            if(detailParam === ""){
+                var url = BASE_URL + '/api/senators/115/orderbycommittee';
+                break;
+            }
+            else {
+                committee = detailParam;
+                var url = BASE_URL + `/api/senators/bycommittee/115/${committee}`;
             }
             break;
         case "house-committee5":
@@ -114,6 +124,60 @@ async function queryData (queryParam) {
                     break;
                 }
             }
+        case "house-committee7":
+            if(detailParam === "") {
+                var url = BASE_URL + '/api/committees/115/House';
+                break;
+            }
+            else {
+                committee = detailParam;
+                subcommittee = extraDetailParam;
+                if(extraDetailParam === "") {
+                    var url = BASE_URL + `/api/committees/115/House/${committee}`;
+                    break;
+                }
+                else {
+
+                    var url = BASE_URL + `/api/committees/115/House/${committee}/${subcommittee}`;
+                    break;
+                }
+            }
+        case "senate-committee6":
+            if(detailParam === "") {
+                var url = BASE_URL + '/api/committees/116/Senate';
+                break;
+            }
+            else {
+                committee = detailParam;
+                subcommittee = extraDetailParam;
+                if(extraDetailParam === "") {
+                    var url = BASE_URL + `/api/committees/116/Senate/${committee}`;
+                    break;
+                }
+                else {
+
+                    var url = BASE_URL + `/api/committees/116/Senate/${committee}/${subcommittee}`;
+                    break;
+                }
+            }
+        case "senate-committee8":
+            if(detailParam === "") {
+                var url = BASE_URL + '/api/committees/115/Senate';
+                break;
+            }
+            else {
+                committee = detailParam;
+                subcommittee = extraDetailParam;
+                if(extraDetailParam === "") {
+                    var url = BASE_URL + `/api/committees/115/Senate/${committee}`;
+                    break;
+                }
+                else {
+
+                    var url = BASE_URL + `/api/committees/115/Senate/${committee}/${subcommittee}`;
+                    break;
+                }
+            }    
         case "legislation-115-house":
             var url = BASE_URL + '/api/housebills/115';
             break;
