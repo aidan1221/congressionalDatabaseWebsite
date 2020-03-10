@@ -106,6 +106,18 @@ async function queryData (queryParam) {
                 var url = BASE_URL + `/api/senators/bycommittee/115/${committee}`;
             }
             break;
+        case "committee-116-house":
+            var url = BASE_URL + '/api/committees/116/House';
+            break;
+        case "committee-115-house":
+            var url = BASE_URL + '/api/committees/115/House';
+            break;
+        case "committee-116-senate":
+            var url = BASE_URL + '/api/committees/116/Senate';
+            break;
+        case "committee-115-senate":
+            var url = BASE_URL + '/api/committees/115/Senate';
+            break;
         case "house-committee5":
             if(detailParam === "") {
                 var url = BASE_URL + '/api/committees/116/House';

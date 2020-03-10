@@ -192,8 +192,6 @@ const getSenatorsByCongressORDERBYstate = (request, response) => {
 const getSenatorsByCongressORDERBYcommittee = (request, response) => {
     const congress = parseInt(request.params.congress);
 
-    console.log("WHAT WHAT");
-
     pool.query(
         `SELECT DISTINCT congressperson as senator, party, state, terms, committee FROM allcommitteeinfo JOIN allsenators as sens ON sen_name = congressperson WHERE sens.congress=$1 AND chamber='Senate' ORDER BY committee asc`,
     [congress],
@@ -201,7 +199,6 @@ const getSenatorsByCongressORDERBYcommittee = (request, response) => {
         if(error) {
             console.log("API ERROR: " + error)
         }
-        console.log("YOUR DATA: " + results.rows);
         response.status(200).json(results.rows);
     })
 }
@@ -225,8 +222,6 @@ const getSenatorByState = (request, response) => {
 const getSenatorsByCommittee = (request, response) => {
     const congress = parseInt(request.params.congress);
     const committee = request.params.committee;
-
-    console.log("THIS WORKS THOUGH, WHYYYY");
 
     pool.query(
         `SELECT DISTINCT congressperson as senator, party, state, terms, committee FROM allcommitteeinfo JOIN allsenators as sens ON sen_name = congressperson WHERE sens.congress=$1 AND chamber='Senate' AND committee LIKE ('%${committee}%') ORDER BY congressperson asc`,
