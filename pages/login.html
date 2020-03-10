@@ -3,19 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="/styles/nav.css" type="text/css" rel="stylesheet">
-    <link href="/styles/index.css" type="text/css" rel="stylesheet">
+    <link href="nav.css" type="text/css" rel="stylesheet">
+    <link href="login.css" type="text/css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-    <title>Home</title>
+    <title>Login</title>
 </head>
 <body>
     <header>
         <nav class="navbar fixed-top navbar-expand-sm navbar-light bg-dark">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
+                <li class="nav-item">
                     <a class="nav-link" href="index.html">Home</a>
                 </li>
                 <li class="nav-item">
@@ -27,7 +26,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="datascience.html">Data Science</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item active">
                     <a class="nav-link" href="login.html">Login</a>
                 </li>
             </ul>
@@ -35,11 +34,21 @@
         </nav>
     </header>
     <main>
-        <div id="main">
-            <div class="container" id="maintext">
-                <h1>Congressional Database Query Site</h1>
-                <h2>Search for congressional data ranging from bills to house members!</h2>
+        <div id="loginbox">
+            <form>
+            <div class="container" id="login">
+                <label for="uname"><b>Username</b></label>
+                <input type="text" placeholder="Enter Username" name="uname" required>
+            
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" required>
+                    
+                <button type="submit">Login</button>
             </div>
+            <div class="container" id="bottonbox">
+                <button type="button" class="cancelbtn">Cancel</button>
+            </div>
+            </form>
         </div>
     </main>
 </body>

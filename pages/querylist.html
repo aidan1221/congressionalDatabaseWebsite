@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="nav.css" type="text/css" rel="stylesheet">
-    <link href="login.css" type="text/css" rel="stylesheet">
+    <link href="query.css" type="text/css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Audiowide&display=swap" rel="stylesheet"> 
-    <title>Login</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <title>Query</title>
 </head>
 <body>
     <header>
@@ -20,13 +21,13 @@
                 <li class="nav-item">
                     <a class="nav-link" href="about.html">About</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item active">
                     <a class="nav-link" href="query.html">Query</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="datascience.html">Data Science</a>
                 </li>
-                <li class="nav-item active">
+                <li class="nav-item">
                     <a class="nav-link" href="login.html">Login</a>
                 </li>
             </ul>
@@ -34,21 +35,25 @@
         </nav>
     </header>
     <main>
-        <div id="loginbox">
-            <form>
-            <div class="container" id="login">
-                <label for="uname"><b>Username</b></label>
-                <input type="text" placeholder="Enter Username" name="uname" required>
-            
-                <label for="psw"><b>Password</b></label>
-                <input type="password" placeholder="Enter Password" name="psw" required>
-                    
-                <button type="submit">Login</button>
+        <div class="container">
+            <div class="overflow-auto bg-dark text-white" id="querylist">
+                <ul>
+                    <li><a href="#">Query</a></li>
+                    <li><a href="#">Query</a></li>
+                    <li><a href="#">Query</a></li>
+                    <li><a href="#">Query</a></li>
+                    <li><a href="#">Query</a></li>
+                    <li><a href="#">Query</a></li>
+                    <li><a href="#">Query</a></li>
+                    <li><a href="#">Query</a></li>
+                    <li><a href="#">Query</a></li>
+                    <li><a href="#">Query</a></li>
+                    <li><a href="#">Query</a></li>
+                    <li><a href="#">Query</a></li>
+                    <li><a href="#">Query</a></li>
+                    <li><a href="#">Query</a></li>
+                </ul>
             </div>
-            <div class="container" id="bottonbox">
-                <button type="button" class="cancelbtn">Cancel</button>
-            </div>
-            </form>
         </div>
     </main>
 </body>

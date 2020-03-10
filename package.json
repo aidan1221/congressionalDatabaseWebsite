@@ -17,8 +17,10 @@
   },
   "homepage": "https://github.com/aidan1221/congressionalDatabaseWebsite#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "pg": "^7.18.2",
-    "react": "^16.12.0"
+    "react": "^16.12.0",
+    "url-search-params": "^1.1.0"
   }
 }
