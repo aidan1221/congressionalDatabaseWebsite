@@ -77,11 +77,16 @@ function setExtraDetailParam(id) {
 const BASE_URL = 'http://localhost:5000';
 
 async function setCommittee(id) {
+
+  setParam(id);
+  setDetailParam(id);
+
   num = id.slice(id.length-1);
   console.log(num);
 
   var committeeName = document.getElementById(id).value;
 
+  
 
   var subcommitteeId = `subcommittee${num}`;
   document.getElementById(subcommitteeId).innerHTML = '';

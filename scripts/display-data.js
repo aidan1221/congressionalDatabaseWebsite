@@ -2,6 +2,7 @@ const urlParams = new URLSearchParams(window.location.search);
 
 const queryParam = decodeURI(urlParams.get('hiddenParam'));
 const detailParam = decodeURI(urlParams.get('hiddenDetailParam'));
+const extraDetailParam = decodeURI(urlParams.get('hiddenExtraDetailParam'));
 
 console.log(`queryParam = ${queryParam}`);
 console.log(typeof(queryParam))
@@ -95,7 +96,25 @@ async function queryData (queryParam) {
                 var url = BASE_URL + `/api/senator/bycommittee/116/${committee}`;
             }
             break;
+        case "house-committee5":
+            if(detailParam === "") {
+                var url = BASE_URL + '/api/committees/116/House';
+                break;
+            }
+            else {
+                committee = detailParam;
+                subcommittee = extraDetailParam;
+                if(extraDetailParam === "") {
+                    var url = BASE_URL + `/api/committees/116/House/${committee}`;
+                    break;
+                }
+                else {
 
+                    var url = BASE_URL + `/api/committees/116/House/${committee}/${subcommittee}`;
+                    break;
+                }
+            }
+            break;
 
         // default:
         //     console.log("No good");
@@ -115,30 +134,38 @@ async function queryData (queryParam) {
 
 queryData(queryParam).then(data => {
 
-    let columns = Object.keys(data[0]);
+    try {
+        let columns = Object.keys(data[0]);
+        console.log(columns);
 
-    console.log(columns);
+        for (let i = 0; i < columns.length; i++) {
+            let header = document.createElement('th');
+            header.innerHTML = `${columns[i]}`;
+            document.getElementById('headers').appendChild(header);
+        }
+        
+        for (let i = 0; i < data.length; i++){
 
-    for (let i = 0; i < columns.length; i++) {
-        let header = document.createElement('th');
-        header.innerHTML = `${columns[i]}`;
-        document.getElementById('headers').appendChild(header);
+            let row = data[i];
+            console.log(data[i]);
+            let newRow = document.createElement('tr');
+            newRow.setAttribute('id', `row${i + 1}`);
+            console.log(newRow.getAttribute('id'));
+            Object.keys(row).forEach(function(key) {            
+                let rowData = document.createElement('td')
+                rowData.innerText = row[key];
+                newRow.appendChild(rowData);
+            })
+            document.getElementById('data').appendChild(newRow);
+        }
+    }
+    catch (err){
+        console.log(err);
+        console.log(`data = ${data}`);
     }
     
-    for (let i = 0; i < data.length; i++){
 
-        let row = data[i];
-        console.log(data[i]);
-        let newRow = document.createElement('tr');
-        newRow.setAttribute('id', `row${i + 1}`);
-        console.log(newRow.getAttribute('id'));
-        Object.keys(row).forEach(function(key) {            
-            let rowData = document.createElement('td')
-            rowData.innerText = row[key];
-            newRow.appendChild(rowData);
-        })
-        document.getElementById('data').appendChild(newRow);
-    }
+    
 
     
 })

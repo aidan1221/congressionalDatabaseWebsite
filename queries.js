@@ -282,11 +282,21 @@ Querying Committee Data
 */
 
 
-const getCommittees = (request, response) =>  {
+
+const getAllCommitteesAndSubCommitteesByChamberAndCongress = (request, response) =>  {
     const congress = parseInt(request.params.congress);
     const chamber = request.params.chamber;
     
-    pool.query() // query for all committee
+    pool.query(
+        'SELECT * FROM allcommitteeinfo WHERE congress=$1 AND chamber=$2 ORDER BY committee asc, subcommittee asc, congressperson asc',
+        [congress, chamber],
+        (error, results) => {
+            if(error) {
+                console.log("API ERROR: " + error);
+            }
+            response.status(200).json(results.rows);
+        }
+    ) // query for all committee
 }
 
 const getSubcommittees = (request, response) =>  {
@@ -302,6 +312,41 @@ const getSubcommittees = (request, response) =>  {
             response.status(200).json(results.rows);
         }
     )
+}
+
+const getCommitteeDataByChamberAndCongress = (request, response) =>  {
+    const congress = parseInt(request.params.congress);
+    const chamber = request.params.chamber;
+    const committee = request.params.committee;
+    
+    pool.query(
+        `SELECT * FROM allcommitteeinfo WHERE congress=$1 AND chamber=$2 AND committee LIKE ('%${committee}%') ORDER BY committee asc, subcommittee asc, congressperson asc`,
+        [congress, chamber],
+        (error, results) => {
+            if(error) {
+                console.log("API ERROR: " + error);
+            }
+            response.status(200).json(results.rows);
+        }
+    ) 
+}
+
+const getSubcommitteeDataByCommittee = (request, response) =>  {
+    const congress = parseInt(request.params.congress);
+    const chamber = request.params.chamber;
+    const committee = request.params.committee;
+    const subcommittee = request.params.subcommittee;
+
+    pool.query(
+        `SELECT * FROM allcommitteeinfo WHERE congress=$1 AND chamber=$2 AND committee LIKE ('%${committee}%') AND subcommittee LIKE ('%${subcommittee}%') ORDER BY committee asc, subcommittee asc, congressperson asc`,
+        [congress, chamber],
+        (error, results) => {
+            if(error) {
+                console.log("API ERROR: " + error);
+            }
+            response.status(200).json(results.rows);
+        }
+    ) 
 }
 
 
@@ -323,5 +368,8 @@ module.exports = {
     getSenateBillsByState,
     getHouseBillsByParty,
     getSenateBillsByParty,
+    getAllCommitteesAndSubCommitteesByChamberAndCongress,
+    getCommitteeDataByChamberAndCongress,
+    getSubcommitteeDataByCommittee,
     getSubcommittees,
 }
