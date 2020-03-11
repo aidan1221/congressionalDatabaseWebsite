@@ -4,6 +4,8 @@
 
   .navbar .navbar-nav>li>a:hover {
     color: #6441a5 !important;
+    border-bottom: 3px solid #6441a5;
+    background-color: rgba(27, 27, 27, 0.699);
   }
 
   .nav-link {

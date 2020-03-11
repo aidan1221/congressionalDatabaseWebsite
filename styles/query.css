@@ -93,6 +93,16 @@ ul {
   cursor: pointer;
 }
 
+.node:hover {
+  box-shadow: 10px 20px 20px rgba(255, 255, 255, 0.5);
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+.querybtn:hover {
+  box-shadow: 10px 20px 20px rgba(255, 255, 255, 0.5);
+  transition: box-shadow 0.2s ease-in-out;
+}
+
 .control-label {
   color: white !important;
 }
