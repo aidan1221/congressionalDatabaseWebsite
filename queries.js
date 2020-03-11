@@ -58,7 +58,7 @@ Querying Representative Data
 const getAllRepNames = (request, response) => {
     
     pool.query(
-        'SELECT rep_name, state, district, party, terms, congress FROM allreps ORDER BY congress ASC, state ASC, rep_name ASC', (error, results) => {
+        'SELECT rep_name as representative, state, district, party, terms, congress FROM allreps ORDER BY congress ASC, state ASC, rep_name ASC', (error, results) => {
             if(error) {
                 console.log("API ERROR: " + error)
             }
@@ -72,7 +72,7 @@ const getRepNamesByCongress = (request, response) => {
     const congress = parseInt(request.params.congress);
 
     pool.query(
-        'SELECT rep_name, state, district, party, terms FROM allreps WHERE congress = $1 ORDER BY rep_name asc',
+        'SELECT rep_name as representative, state, district, party, terms FROM allreps WHERE congress = $1 ORDER BY rep_name asc',
     [congress],
     (error, results) => {
         if(error) {
@@ -87,7 +87,7 @@ const getRepNamesByCongressORDERBYstate = (request, response) => {
     const congress = parseInt(request.params.congress);
 
     pool.query(
-        'SELECT rep_name, state, district, party, terms FROM allreps WHERE congress = $1 ORDER BY state asc, district asc',
+        'SELECT rep_name as representative, state, district, party, terms FROM allreps WHERE congress = $1 ORDER BY state asc, district asc',
     [congress],
     (error, results) => {
         if(error) {
@@ -116,7 +116,7 @@ const getRepByState = (request, response) => {
     const congress = parseInt(request.params.congress);
     const state = request.params.state;
     pool.query(
-        'SELECT rep_name, district, party, terms FROM allreps WHERE congress=$1 AND state=$2',
+        'SELECT rep_name as representative, state, district, party, terms FROM allreps WHERE congress=$1 AND state=$2',
         [congress, state],
         (error, results) => {
             if (error) {
@@ -208,7 +208,7 @@ const getSenatorByState = (request, response) => {
     const state = request.params.state;
 
     pool.query(
-        'SELECT sen_name as senator, party, terms FROM allsenators WHERE congress=$1 AND state=$2 ORDER BY senator asc',
+        'SELECT sen_name as senator, state, party, terms FROM allsenators WHERE congress=$1 AND state=$2 ORDER BY senator asc',
         [congress, state],
         (error, results) => {
             if (error) {

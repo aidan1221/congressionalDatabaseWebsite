@@ -1,0 +1,38 @@
+#main-content {
+    margin: auto;
+}
+
+.data-analytics {
+    margin-left: 25px;
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    grid-template-rows: 500px 500px 500px;
+    gap: 25px;
+    width: 1000px;
+    text-align: center;
+}
+
+.data-viz {
+    align-items: center;
+    max-height: 500px;
+    max-width: 100%;
+}
+
+
+.data-description {
+    margin: 0;
+    padding-left: 10px;
+    padding-top: 100px;
+    text-align: left;
+    border-left: 1px solid white;
+    color: white;
+    
+}
+
+#about-the-data {
+    margin: 25px 0;
+    text-align: center;
+    color: white;
+    text-decoration: underline;
+    text-decoration-color: white;
+}
