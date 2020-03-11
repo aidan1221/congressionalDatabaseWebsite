@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="nav.css" type="text/css" rel="stylesheet">
+    <link href="../styles/datascience.css" type="text/css" rel="stylesheet"></link>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet">
@@ -33,7 +34,42 @@
         </ul>
         <span class="navbar-text"><a href="index.html">CongressDBQ</a></span>
     </nav>
-
-    <div id="test-div"></div>
+    <u><h2 id="about-the-data">What Can We See With the Data:</h2></u>
+    <div id="main-content" class="container data-analytics">
+            <div id="image1" class="image">
+                <img class="data-viz" src="../images/republican_house_bill_statuses_115.png" alt="republican house bill statuses 115th precentages congress" />   
+            </div>
+            <p id="desc1" class="data-description">
+                This graphic depicts the percentage of bills with a certain status sponsored by Republicans in the Repulican controlled House of Representatives during the 115th congress. 
+                As you can see, a large majority of bills introduced to the House of Representatives over the course of a congressional class do not make it past 
+                the status of Introduced. 
+            </p>
+            <div id="image2" class="image">
+                <img class="data-viz" src="../images/dem_house_bills_statuses_115.png" alt="democrat house bill statuses 115th precentages congress" />
+            </div>
+            <p id="desc2" class="data-description">
+                This graphic depicts the percentage of bills with a certain status sponsored by Democrats in the Republican controlled House of Representatives during the 115th congress.
+                It is immediately clear that an ever higher number of the introduced bills sponsored by Democrats never made it out of the House. However, of those that did,
+                a slighter greater portion of them also cleared the Senate than those sponsored by their Republican colleagues.  
+            </p>
+            <div id="image3" class="image">
+                <img class="data-viz" src="../images/republican_house_bills_statuses_116.png" alt="republican house bill statuses precentages 115th congress" />      
+            </div>
+            <p id="desc3" class="data-description">
+                This graphic depicts the percentage of bills with a certain status sponsored by Republicans in the Democrat controlled House of Representatives during the 116th congress. 
+                It can be seen here that the portion of bills remaining in 'Introduced' status is higher than in the Republican controlled 115th congress. Although it is important to make note 
+                of the fact that the 116th congress has only just begun it second session. 
+            </p>
+            <div id="image4" class="image">
+                <img class="data-viz" src="../images/dem_house_bills_statuses_116.png" alt="democratic house bill statuses precentages 116th congress" />
+            </div>
+            <p id="desc4" class="data-description">
+                This graphic depicts the percentage of bills with a certain status sponsored by Republicans in the Democrat controlled House of Representatives during the 116th congress. 
+                Democratic bills are passing the House at a slightly higher rate than Republican sponsored bills, but as can be seen in the prior image, of the bills passing the House 
+                neither Repulican nor Democratic bills are getting through the Senate at a very high rate. Only 1% of bills introduced in the House have been signed into law by the President.
+            </p>
+        </div>
+        
+    </div>
 </body>
 </html>

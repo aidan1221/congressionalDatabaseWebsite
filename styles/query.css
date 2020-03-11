@@ -7,6 +7,7 @@
 }
 
 #pageinfo {
+  white-space: nowrap;
   color: white;
 }
 
@@ -91,8 +92,14 @@ ul {
   cursor: pointer;
 }
 
+#quick-queries-header {
+  text-align: center;
+  margin-top: 100px;
+  color:white;
+  text-decoration: underline;
+}
+
 #querylist {
-  height: 600px;
   width: 1000px;
   overflow-y: scroll;
   position: relative;
@@ -101,8 +108,12 @@ ul {
 }
 
 #querylist a {
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: white;
+}
+
+#list-items {
+  list-style: circle;
 }
 
 li>a:hover {
@@ -139,4 +150,8 @@ li>a:hover {
   #querylist a {
     font-size: 3vw;
   }
+}
+
+.querylink:hover {
+    box-shadow: 0 5px 25px rgba(241, 236, 236, 0.705);
 }
