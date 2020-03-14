@@ -76,7 +76,7 @@ function setExtraDetailParam(id) {
   console.log(detail)
 }
 
-const BASE_URL = 'http://localhost:5000';
+const BASE_URL = 'http://localhost:8080';
 
 async function setCommittee(id) {
 

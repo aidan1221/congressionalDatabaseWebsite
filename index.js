@@ -8,13 +8,13 @@ const db = require('./queries')
 
 const app = express();
 
-const port = 5000;
+const port = 8080;
 
-app.use(express.static('../congressionalDatabaseWebsite/'));
-app.use(express.static(path.join(__dirname, 'pages')));
-app.use(express.static('styles'));
-app.use(express.static(path.join(__dirname, 'images')));
-app.use(express.static(path.join(__dirname, 'scripts')));
+app.use(express.static('../congressionalDatabaseWebsite'));
+app.use(express.static(__dirname + '/pages'));
+app.use(express.static(__dirname + '/styles'));
+app.use(express.static(__dirname + '/images'));
+app.use(express.static(__dirname + '/scripts'));
 app.use(bodyParser.json());
 app.use(cors());
 app.use(

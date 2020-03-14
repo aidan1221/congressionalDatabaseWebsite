@@ -7,7 +7,7 @@ const extraDetailParam = decodeURI(urlParams.get('hiddenExtraDetailParam'));
 console.log(`queryParam = ${queryParam}`);
 console.log(typeof(queryParam))
 
-const BASE_URL = 'http://localhost:5000';
+const BASE_URL = 'http://localhost:8080';
 
 async function queryData (queryParam) {
 
