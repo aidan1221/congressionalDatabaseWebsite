@@ -71,7 +71,7 @@ function setDetailParam(id) {
 function setExtraDetailParam(id) {
   let detail = document.getElementById(id).value;
 
-  document.getElementById('hidden-extra-detail-param').value = detail;
+  document.getElementById('hidden-extra-detail-param').value = encodeURI(detail);
 
   console.log(detail)
 }
@@ -86,8 +86,9 @@ async function setCommittee(id) {
   num = id.slice(id.length-1);
   console.log(num);
 
-  var committeeName = document.getElementById(id).value;
+  var committeeName = encodeURI(document.getElementById(id).value);
 
+  console.log("** Encoded URI = " + committeeName + " **");
   
 
   var subcommitteeId = `subcommittee${num}`;
@@ -98,7 +99,6 @@ async function setCommittee(id) {
 
   switch (id) {
     case "house-committee5":
-      console.log("HOUSE COMMITTEE 5");
       var url = BASE_URL + `/api/getsubcommittees/116/House/${committeeName}`;
       break;
     case "senate-committee6":

@@ -132,7 +132,7 @@ const getRepByCommittee = (request, response) => {
     const committee = request.params.committee;
 
     pool.query(
-        `SELECT rep_name as representative, party, state, district, terms, hc_name as committee FROM allhousecommitteeinfo NATURAL JOIN allreps WHERE congress=$1 AND hc_name LIKE ('%${committee}%') ORDER BY state ASC`, 
+        `SELECT DISTINCT rep_name as representative, party, state, district, terms, hc_name as committee FROM allhousecommitteeinfo NATURAL JOIN allreps WHERE congress=$1 AND hc_name LIKE ('%${committee}%') ORDER BY state ASC`, 
         [congress],
         (error, results) => {
              if (error) {
@@ -439,7 +439,7 @@ const getSubcommittees = (request, response) =>  {
     const committee = request.params.committee;
     
     pool.query(
-        `SELECT * FROM allsubcommittees WHERE congress=$1 AND chamber=$2 AND committee LIKE ('%${committee}%')`, [congress,chamber], (error, results) => {
+        `SELECT DISTINCT subcommittee, committee, chamber, congress FROM allsubcommittees WHERE congress=$1 AND chamber=$2 AND committee LIKE ('%${committee}%') AND subcommittee IS NOT NULL`, [congress,chamber], (error, results) => {
             if(error) {
                 console.log("API ERROR: " + error);
             }
