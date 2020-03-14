@@ -269,7 +269,7 @@ async function queryData (queryParam) {
                 var url = BASE_URL + '/api/senatebills/116/orderbyparty';
             }
             else {
-                var url = BASE_URL + `/api/senatebillsbyparty/116/${detialParam}`;
+                var url = BASE_URL + `/api/senatebillsbyparty/116/${detailParam}`;
             }
             break;
         case "legislation":
